@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/earn_money"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Earn money"/>
+
+    <item
+        android:id="@+id/my_task"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="My task"/>
+
+    <item
+        android:id="@+id/post_task"
+        android:icon="@drawable/ic_content_copy_black_24dp"
+        android:title="Post a task"/>
+
+    <item
+        android:id="@+id/messages"
+        android:icon="@drawable/ic_message_black_24dp"
+        android:title="Message"/>
+
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        android:title="More"/>
+
+
+
+</menu>
