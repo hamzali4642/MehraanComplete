@@ -20,7 +20,7 @@ public class Mobile_Verification extends Fragment {
                              Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.fragment_mobile__verification, container, false);
 
-       //fuck you
+       //fuck you there
 
        verifynumber=(Button)view.findViewById(R.id.verifynumberid);
         verifynumber.setOnClickListener(new View.OnClickListener() {
