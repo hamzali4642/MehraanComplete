@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     tools:context=".Mobile_Verification">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/backmblverifybtnid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <ImageView
+        android:id="@+id/closemblverifybtnid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
@@ -35,7 +36,7 @@
         android:gravity="center"
         android:text="Sign up"
         android:textAllCaps="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -46,12 +47,12 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/textView"
-
+        android:id="@+id/phonenumberid"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
+        android:textCursorDrawable="@color/colorPrimary"
         android:hint="e.g 03001234567"
         android:lines="1"
         android:paddingHorizontal="30dp"
@@ -63,53 +64,25 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_back"
         android:gravity="center"
-        android:text="Sign up using phone number"
-        android:textColor="@color/colorAccent"
+        android:text="Next"
+        android:textColor="@color/colorWhite"
         android:textSize="15sp"
-        android:textStyle="bold"
         android:id="@+id/verifynumberid"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Didn't receive a code? Call now"
-        android:textColor="@color/colorAccent"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryDarkTransparent"
-        android:gravity="center"
-        android:text="03001234567"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -137,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.51" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
