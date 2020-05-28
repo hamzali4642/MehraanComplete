@@ -12,15 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction().replace(R.id.signupfragid,new Mobile_Verification()).commit();
 
-        //alaa ka asnddfvb
 
-
-
-    }
-
-    public void Fun(){
-
-        //Babar Azam
 
     }
 }
