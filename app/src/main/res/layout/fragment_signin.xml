@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     tools:context=".Signin">
 
     <TextView
@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="Login"
         android:textAllCaps="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -51,7 +51,7 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
         android:hint="e.g 03001234567"
         android:lines="1"
@@ -68,7 +68,7 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
         android:hint="Password"
         android:lines="1"
