@@ -16,7 +16,7 @@ public class PinCode extends Fragment {
 
     Button resendpin;
     ImageView close, back;
-
+//hgjhjjklll;;;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
