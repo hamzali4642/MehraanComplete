@@ -41,7 +41,6 @@ public class Signup extends Fragment {
         password=(EditText) view.findViewById(R.id.passwordid);
 
 
-//fhfjjg
 
 
         close.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +57,8 @@ public class Signup extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getFragmentManager().beginTransaction().replace(R.id.signupfragid,new Mobile_Verification()).commit();
-
+                Intent intent= new Intent(getContext(),Dashboard.class);
+                startActivity(intent);
             }
         });
 
