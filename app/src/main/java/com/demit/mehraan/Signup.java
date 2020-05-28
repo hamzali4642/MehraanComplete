@@ -27,6 +27,7 @@ public class Signup extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_signup, container, false);
 
+        type=(Spinner)view.findViewById(R.id.typespinnerid);
         String[] items = new String[]{"Earn Money","Post Task"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
