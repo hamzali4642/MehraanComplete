@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -19,6 +20,7 @@ public class Signup extends Fragment {
     Spinner type;
     ImageView close, back;
     Button signup;
+    EditText firstname, lastname, email, password;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,7 +35,14 @@ public class Signup extends Fragment {
         close=(ImageView)view.findViewById(R.id.closepinverifybtnid);
         back=(ImageView)view.findViewById(R.id.backpinverifybtnid);
         signup=(Button)view.findViewById(R.id.signupbtnid);
-        
+        firstname=(EditText) view.findViewById(R.id.firstnaemid);
+        lastname=(EditText) view.findViewById(R.id.lastnameid);
+        email=(EditText) view.findViewById(R.id.emailid);
+        password=(EditText) view.findViewById(R.id.passwordid);
+
+
+
+
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
