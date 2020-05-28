@@ -20,7 +20,7 @@ public class Signup extends Fragment {
     Spinner type;
     ImageView close, back;
     Button signup;
-    EditText firstname, lastname, email, password;
+    EditText firstname, lastname, email, password, confirmpassword;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +40,7 @@ public class Signup extends Fragment {
         lastname=(EditText) view.findViewById(R.id.lastnameid);
         email=(EditText) view.findViewById(R.id.emailid);
         password=(EditText) view.findViewById(R.id.passwordid);
+        confirmpassword=(EditText) view.findViewById(R.id.confirmpasswordid);
 
 
 

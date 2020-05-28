@@ -8,6 +8,7 @@
     tools:context=".Signin">
 
     <Button
+        android:id="@+id/loginbtnid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
@@ -22,10 +23,11 @@
 
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/loginphoneid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/edit_text_back"
+        android:textCursorDrawable="@color/colorPrimary"
         android:gravity="center_vertical"
         android:hint="e.g 03001234567"
         android:lines="1"
@@ -40,13 +42,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/textView2"
+        android:id="@+id/loginpasswordid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
         android:hint="Password"
         android:lines="1"
+        android:textCursorDrawable="@color/colorPrimary"
         android:paddingHorizontal="30dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
@@ -55,29 +58,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-
-    <ImageView
-        android:id="@+id/backloginbtnid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_arrow_back_black_24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
-
-
-    <ImageView
-        android:id="@+id/closeloginbtnid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_close_black_24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <TextView
         android:id="@+id/textView4"
@@ -98,7 +78,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:gravity="center_vertical|right"
         android:paddingHorizontal="5dp"
@@ -107,23 +87,23 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <TextView
+        android:id="@+id/loginsignupid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_vertical|left"
         android:paddingHorizontal="5dp"
         android:text="Sign up"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
 
     <androidx.constraintlayout.widget.Guideline
