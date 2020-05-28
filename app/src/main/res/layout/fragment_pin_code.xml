@@ -146,20 +146,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/verifypinid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_back"
-        android:gravity="center"
-        android:text="verify"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline17"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
-
-    <Button
         android:id="@+id/resendpinid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -170,7 +156,7 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
 
