@@ -41,7 +41,7 @@ public class Signup extends Fragment {
         password=(EditText) view.findViewById(R.id.passwordid);
 
 
-
+//fhfjjg
 
 
         close.setOnClickListener(new View.OnClickListener() {
