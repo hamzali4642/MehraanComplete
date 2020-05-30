@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ImageView;
 
 
 public class EarnMoney extends Fragment {
 
     RecyclerView earnmoneylist;
+    ImageView tasksettings;
+
+
 
 
     @Override
@@ -22,6 +25,17 @@ public class EarnMoney extends Fragment {
                              Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.fragment_earn_money, container, false);
        earnmoneylist=view.findViewById(R.id.tasklistid);
+       tasksettings=view.findViewById(R.id.tasksettingsbtnid);
+
+       tasksettings.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+               getFragmentManager().beginTransaction().replace(R.id.dashfragid,new TaskFilters()).commit();
+
+           }
+       });
+
 
         earnmoneylist.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -33,6 +47,9 @@ public class EarnMoney extends Fragment {
         int[] image={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
 
         earnmoneylist.setAdapter(new EarnMoneyAdapter(name,location,price,comments,offers,image));
+
+
+
 
 
         return view;
