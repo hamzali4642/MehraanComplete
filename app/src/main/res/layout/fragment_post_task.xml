@@ -47,10 +47,7 @@
                 android:textColor="@color/colorgrey"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/guideline45"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline44"
-                app:layout_constraintVertical_bias="1.0" />
+                />
 
             <EditText
                 android:layout_below="@id/textView"
