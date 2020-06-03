@@ -23,9 +23,9 @@ public class PostTask extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_post_task, container, false);
         title=view.findViewById(R.id.tasktitleid);
-        description=view.findViewById(R.id.tasktitleid);
-        address=view.findViewById(R.id.tasktitleid);
-        price=view.findViewById(R.id.tasktitleid);
+        description=view.findViewById(R.id.taskdescriptionid);
+        address=view.findViewById(R.id.taskadressid);
+        price=view.findViewById(R.id.taskbudgetid);
         post=view.findViewById(R.id.posttaskid);
         physical=view.findViewById(R.id.radiophysicalid);
         post=view.findViewById(R.id.radioonlineid);

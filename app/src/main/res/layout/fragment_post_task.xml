@@ -76,7 +76,6 @@
 
                 <EditText
 
-                    android:layout_below="@id/textView"
                     android:id="@+id/taskdescriptionid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
