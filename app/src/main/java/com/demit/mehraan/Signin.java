@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class Signin extends Fragment {
 
 
-    TextView signup;
+    TextView signup,forgetPass;
     Button login;
     EditText phone, password;
 
@@ -30,6 +30,7 @@ public class Signin extends Fragment {
         phone=(EditText) view.findViewById(R.id.loginphoneid);
         password=(EditText) view.findViewById(R.id.loginpasswordid);
         signup=(TextView)view.findViewById(R.id.loginsignupid);
+        forgetPass=(TextView)view.findViewById(R.id.loginforgetpassid);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,15 @@ public class Signin extends Fragment {
                 Intent intent= new Intent(getContext(),Dashboard.class);
                 startActivity(intent);
 
+
+            }
+        });
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getFragmentManager().beginTransaction().replace(R.id.signupfragid,new Mobile_Verification()).commit();
 
             }
         });

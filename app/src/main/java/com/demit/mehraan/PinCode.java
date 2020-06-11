@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 public class PinCode extends Fragment {
 
-    Button resendpin;
+    Button resendpin, changepass;
     ImageView close, back;
 
     @Override
@@ -25,6 +25,16 @@ public class PinCode extends Fragment {
         close=(ImageView)view.findViewById(R.id.closepinverifybtnid);
         back=(ImageView)view.findViewById(R.id.backpinverifybtnid);
         resendpin=(Button)view.findViewById(R.id.resendpinid);
+        changepass=(Button)view.findViewById(R.id.changepassid);
+
+        changepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getFragmentManager().beginTransaction().replace(R.id.signupfragid,new Mobile_Verification()).commit();
+
+            }
+        });
 
 
         close.setOnClickListener(new View.OnClickListener() {
