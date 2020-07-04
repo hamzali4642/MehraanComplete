@@ -1,5 +1,7 @@
 package com.demit.mehraan;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,9 +60,13 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
 
 
         holder.open.setOnClickListener(new View.OnClickListener() {
+            private Context context;
             @Override
             public void onClick(View v) {
+                context=v.getContext();
 
+               // Intent intent=new Intent(context,Details.class);
+               // context.startActivity(intent);
 
             }
         });
