@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Messages"
-    android:background="#FFC900"
-    >
+    tools:context=".Messages">
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textStyle="normal"
-        android:textSize="20sp"
-        android:text="Messages"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorAccent"
+        android:id="@+id/txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"/>
+        android:paddingHorizontal="20dp"
+        android:text="Messages"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatlistid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

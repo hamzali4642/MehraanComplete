@@ -65,8 +65,8 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
             public void onClick(View v) {
                 context=v.getContext();
 
-               // Intent intent=new Intent(context,Details.class);
-               // context.startActivity(intent);
+               Intent intent=new Intent(context,Details.class);
+               context.startActivity(intent);
 
             }
         });

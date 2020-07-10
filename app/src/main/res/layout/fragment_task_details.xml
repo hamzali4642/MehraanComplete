@@ -57,6 +57,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"
         app:layout_constraintTop_toTopOf="@+id/guideline37">
 
         <RelativeLayout
@@ -397,8 +398,6 @@
                 android:layout_marginBottom="20dp"
                 android:text="Task details would be shown here"/>
 
-
-
             <TextView
                 android:id="@+id/txxxxxxxt"
                 android:layout_width="wrap_content"
@@ -424,14 +423,13 @@
                 android:id="@+id/cmntid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Task Details"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/offerlistid"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
-                />
+                android:text="Comments"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/cmnttxtxt"
@@ -445,9 +443,13 @@
                 android:text="Comment below for more details, please do not share personal information, email, phone, skype ID or website link, as it is against our policy and your account may be blocked"/>
 
 
-
-
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentslistid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cmnttxtxt"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="20dp" />
 
 
         </RelativeLayout>
