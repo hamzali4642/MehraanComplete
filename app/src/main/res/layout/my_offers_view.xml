@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginHorizontal="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+        <RelativeLayout
+            android:layout_marginVertical="5dp"
+            android:id="@+id/myposterinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tasknameid">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/mypersonofferdp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/ic_launcher_background"/>
+
+
+            <LinearLayout
+                android:layout_toRightOf="@+id/mypersonofferdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                >
+
+                <TextView
+                    android:id="@+id/mypersonnameid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Person Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    />
+
+                <RatingBar
+                    android:id="@+id/myraatingofferid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:isIndicator="true"
+                    />
+
+                <TextView
+                    android:id="@+id/myreviewsofferid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="(0 Reviews)"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mytimeofferid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="45 min ago"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginVertical="5dp"
+            android:id="@+id/myassigntask"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myposterinfo">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                >
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/mymsgbtnid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:fabSize="mini"
+                    android:src="@drawable/ic_message_black_24dp"
+                    />
+
+               <Button
+                   android:id="@+id/myassignbtnid"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:text="Assign"
+                   android:paddingHorizontal="10dp"
+                   android:textColor="@color/colorWhite"
+                   android:layout_marginHorizontal="10dp"
+                   android:drawableLeft="@drawable/ic_check_box_black_24dp"
+                   android:background="@drawable/button_back"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_marginBottom="5dp"
+            android:id="@+id/myverificationinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myassigntask">
+
+            <TextView
+                android:id="@+id/myrrvtt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Verification"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:layout_marginHorizontal="15dp"
+                />
+
+            <LinearLayout
+                android:layout_below="@+id/myrrvtt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:id="@+id/myemailverificationid"
+                    >
+
+                    <ImageView
+                        android:id="@+id/myemailverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_email_black_24dp"/>
+
+                    <TextView
+                        android:layout_below="@id/myemailverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorgrey"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:id="@+id/myphoneverificationid"
+                    >
+
+                    <ImageView
+                        android:id="@+id/myphoneverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_local_phone_black_24dp"/>
+
+                    <TextView
+                        android:layout_below="@id/myphoneverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorgrey"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:id="@+id/mypaymentverificationid"
+                    >
+
+                    <ImageView
+                        android:id="@+id/mypaymentverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_payment_black_24dp"/>
+
+                    <TextView
+                        android:layout_below="@id/mypaymentverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorgrey"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:id="@+id/mycnicverificationid"
+                    >
+
+                    <ImageView
+                        android:id="@+id/mycnicverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_account_circle_black_24dp"/>
+
+                    <TextView
+                        android:layout_below="@id/mycnicverifyiconid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CNIC"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorgrey"/>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

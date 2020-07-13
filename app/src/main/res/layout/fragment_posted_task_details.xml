@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/backtasdetailsid"
+            android:id="@+id/backmytaskid"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -29,11 +29,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="14dp"
-            android:layout_toRightOf="@+id/backtasdetailsid"
+            android:layout_toRightOf="@+id/backmytaskid"
             android:gravity="center_vertical"
             android:paddingHorizontal="20dp"
-            android:text="Task Detail "
+            android:text="My Task "
+            android:layout_toLeftOf="@+id/myedittask"
             android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/myedittask"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="14dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="Edit "
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="normal" />
 
@@ -52,7 +66,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/taskstatusid"
+                android:id="@+id/mytaskstatusid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -60,7 +74,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/openid"
+                    android:id="@+id/myopenid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/leftback"
@@ -72,7 +86,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/assignedid"
+                    android:id="@+id/myassignedid"
                     android:enabled="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,7 +99,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/completedid"
+                    android:id="@+id/mycompletedid"
                     android:enabled="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,7 +112,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/reviewedid"
+                    android:id="@+id/myreviewedid"
                     android:enabled="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,10 +126,10 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tasknameid"
+                android:id="@+id/mytasknameid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/taskstatusid"
+                android:layout_below="@+id/mytaskstatusid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="5dp"
                 android:text="Task Name"
@@ -124,14 +138,14 @@
                 android:textStyle="normal" />
 
             <RelativeLayout
-                android:id="@+id/posterinfo"
+                android:id="@+id/myposterinfo"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/tasknameid"
+                android:layout_below="@+id/mytasknameid"
                 android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/posterdp"
+                    android:id="@+id/myposterdp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
@@ -143,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/posterdp"
+                    android:layout_toRightOf="@+id/myposterdp"
                     android:orientation="vertical">
 
                     <TextView
@@ -154,7 +168,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/posternameid"
+                        android:id="@+id/myposternameid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Poster Name"
@@ -165,7 +179,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/posttimeid"
+                    android:id="@+id/myposttimeid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -189,14 +203,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/posterlocation"
+                android:id="@+id/myposterlocation"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/posterinfo"
+                android:layout_below="@+id/myposterinfo"
                 android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/posterlocationicon"
+                    android:id="@+id/myposterlocationicon"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -208,8 +222,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/showonmapbtn"
-                    android:layout_toRightOf="@+id/posterlocationicon"
+                    android:layout_toLeftOf="@+id/myshowonmapbtn"
+                    android:layout_toRightOf="@+id/myposterlocationicon"
                     android:orientation="vertical">
 
                     <TextView
@@ -220,7 +234,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/tasklocationid"
+                        android:id="@+id/mytasklocationid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Task location"
@@ -231,7 +245,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/showonmapbtn"
+                    android:id="@+id/myshowonmapbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -256,14 +270,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/duedateid"
+                android:id="@+id/myduedateid"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/posterlocation"
+                android:layout_below="@+id/myposterlocation"
                 android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/dateiconid"
+                    android:id="@+id/mydateiconid"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -275,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/dateiconid"
+                    android:layout_toRightOf="@+id/mydateiconid"
                     android:orientation="vertical">
 
                     <TextView
@@ -286,7 +300,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/taskdateid"
+                        android:id="@+id/mytaskdateid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="25 June 2020"
@@ -311,57 +325,46 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/budgetid"
+                android:id="@+id/mybudgetid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/duedateid"
+                android:layout_below="@id/myduedateid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
                 android:background="@color/colorAccent">
 
                 <TextView
-                    android:id="@+id/txttttt"
+                    android:id="@+id/mytxttttt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Task Budget Estimated"
+                    android:text="Change Task Status"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/estimatedbudgetid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txttttt"
-                    android:layout_centerHorizontal="true"
-                    android:text="Rs 50000"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
                 <Button
-                    android:id="@+id/makeofferbtnid"
+                    android:id="@+id/changestatusbtnid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/estimatedbudgetid"
+                    android:layout_below="@id/mytxttttt"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20sp"
                     android:background="@drawable/button_back"
                     android:paddingHorizontal="10dp"
-                    android:text="Make Offer"
+                    android:text="Open"
                     android:textColor="@color/colorWhite" />
 
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/txtxttxtx"
+                android:id="@+id/mytxtxttxtx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/budgetid"
+                android:layout_below="@id/mybudgetid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
                 android:text="Task Details"
@@ -370,10 +373,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/taskdetailsid"
+                android:id="@+id/mytaskdetailsid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtxttxtx"
+                android:layout_below="@id/mytxtxttxtx"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="Task details would be shown here"
@@ -381,10 +384,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txxxxxxxt"
+                android:id="@+id/mytxxxxxxxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/taskdetailsid"
+                android:layout_below="@id/mytaskdetailsid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
                 android:text="Offers"
@@ -393,17 +396,17 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/offerlistid"
+                android:id="@+id/myofferlistid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txxxxxxxt"
+                android:layout_below="@+id/mytxxxxxxxt"
                 android:layout_marginBottom="20dp" />
 
             <TextView
-                android:id="@+id/cmntid"
+                android:id="@+id/mycmntid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/offerlistid"
+                android:layout_below="@id/myofferlistid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
                 android:text="Comments"
@@ -412,10 +415,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cmnttxtxt"
+                android:id="@+id/mycmnttxtxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cmntid"
+                android:layout_below="@id/mycmntid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="Comment below for more details, please do not share personal information, email, phone, skype ID or website link, as it is against our policy and your account may be blocked"
@@ -424,33 +427,33 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/commentslistid"
+                android:id="@+id/mycommentslistid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cmnttxtxt"
+                android:layout_below="@+id/mycmnttxtxt"
                 android:layout_marginTop="21dp"
                 android:layout_marginBottom="20dp" />
 
 
             <ScrollView
-                android:id="@+id/scrllviewid2"
+                android:id="@+id/myscrllviewid2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/commentslistid"
+                android:layout_below="@+id/mycommentslistid"
                 android:layout_alignParentBottom="true">
 
                 <RelativeLayout
-                    android:id="@+id/reviewtypeid"
+                    android:id="@+id/myreviewtypeid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/edit_text_back">
 
                     <EditText
-                        android:id="@+id/typecommentid"
+                        android:id="@+id/mytypecommentid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@id/sendbtnid"
+                        android:layout_toLeftOf="@id/mysendbtnid"
                         android:background="@drawable/edit_text_back"
                         android:gravity="center_vertical"
                         android:hint="Write your comment"
@@ -459,7 +462,7 @@
                         android:textSize="15sp" />
 
                     <ImageView
-                        android:id="@+id/sendbtnid"
+                        android:id="@+id/mysendbtnid"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignTop="@+id/typecommentid"

@@ -226,11 +226,60 @@
                 android:textSize="15sp" />
 
 
+
+            <View
+                android:id="@+id/view44"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_below="@+id/taskbudgetid"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="20dp"
+                android:alpha="0.25"
+                android:background="@color/colorgrey"
+                app:layout_constraintBottom_toTopOf="@+id/guideline32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textView3ddd"
+                android:layout_below="@id/view44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_vertical"
+                android:text="Due Date"
+                android:textColor="@color/colorgrey"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/taskduedateid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3ddd"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_back"
+                android:gravity="center"
+                android:hint="Select date for your task"
+                android:lines="1"
+                android:textColorHint="@color/colorWhite"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/colorWhite"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="15sp" />
+
             <Button
                 android:id="@+id/posttaskid"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="100dp"
-                android:layout_below="@+id/taskbudgetid"
+                android:layout_margin="50dp"
+                android:layout_below="@+id/taskduedateid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_back"

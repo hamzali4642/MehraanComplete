@@ -144,7 +144,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
-
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -163,6 +162,17 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0.1dp"
+        android:layout_marginHorizontal="15dp"
+        android:alpha="0.25"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
         android:id="@+id/view5"
         android:layout_width="0dp"
         android:layout_height="0.1dp"
@@ -174,23 +184,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view6"
         android:layout_width="0dp"
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
         android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0.1dp"
-        android:layout_marginHorizontal="15dp"
-        android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -204,26 +204,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <View
-        android:id="@+id/view4"
         android:layout_width="0dp"
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
         android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/view6"
-        android:layout_width="0dp"
-        android:layout_height="0.1dp"
-        android:layout_marginHorizontal="15dp"
-        android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
