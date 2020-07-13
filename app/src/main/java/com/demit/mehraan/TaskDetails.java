@@ -9,19 +9,77 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.gson.internal.$Gson$Preconditions;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class TaskDetails extends Fragment {
 
     RecyclerView offerlist, commentslist;
-
+    TextView open, assigned, completed, reviewed, taskname, postername, tasklocation, postime, showonmap, taskdate, taskbudget, taskdetails;
+    EditText writecomment;
+    ImageView sendbtn, backbtn;
+    Button makeoffer;
+    CircleImageView posterimage;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_task_details, container, false);
+
+        open=view.findViewById(R.id.openid);
+        assigned=view.findViewById(R.id.assignedid);
+        completed=view.findViewById(R.id.completedid);
+        reviewed=view.findViewById(R.id.reviewedid);
+        taskname=view.findViewById(R.id.tasknameid);
+        postername=view.findViewById(R.id.posternameid);
+        tasklocation=view.findViewById(R.id.tasklocationid);
+        postime=view.findViewById(R.id.posttimeid);
+        showonmap=view.findViewById(R.id.showonmapbtn);
+        taskdate=view.findViewById(R.id.taskdateid);
+        taskbudget=view.findViewById(R.id.estimatedbudgetid);
+        taskdetails=view.findViewById(R.id.taskdetailsid);
+        writecomment=view.findViewById(R.id.typecommentid);
+        sendbtn=view.findViewById(R.id.sendbtnid);
+        backbtn=view.findViewById(R.id.backtasdetailsid);
+        makeoffer=view.findViewById(R.id.makeofferbtnid);
+        makeoffer=view.findViewById(R.id.makeofferbtnid);
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        sendbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        makeoffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        showonmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
        offerlist=view.findViewById(R.id.offerlistid);
        commentslist=view.findViewById(R.id.commentslistid);

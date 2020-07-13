@@ -6,10 +6,6 @@
             android:shape="rectangle">
             <solid
                 android:color="@color/colorPrimary"/>
-            <corners
-                android:bottomRightRadius="50dp"
-                android:topRightRadius="50dp"
-                />
         </shape>
     </item>
 
@@ -18,12 +14,8 @@
             android:shape="rectangle">
             <solid
                 android:color="@color/colorgrey"/>
-            <corners
-                android:bottomRightRadius="50dp"
-                android:topRightRadius="50dp"
-                />
+
         </shape>
     </item>
-
 
 </selector>
