@@ -51,6 +51,7 @@ public class TaskDetails extends Fragment {
         backbtn=view.findViewById(R.id.backtasdetailsid);
         makeoffer=view.findViewById(R.id.makeofferbtnid);
         makeoffer=view.findViewById(R.id.makeofferbtnid);
+        posterimage=view.findViewById(R.id.posterdp);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
