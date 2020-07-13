@@ -58,12 +58,6 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         String timetxt=time[position];
         holder.time.setText(timetxt);
 
-        boolean emailtxt=email[position];
-        if(emailtxt==false){
-
-            holder.email.setAlpha((float) 0.5);
-
-        }
 
         boolean phonetxt=phone[position];
         if(phonetxt==false){
@@ -80,7 +74,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         }
 
         boolean cnictxt=cnic[position];
-        if(emailtxt==false){
+        if(cnictxt==false){
 
             holder.cnic.setAlpha((float) 0.5);
 
@@ -107,11 +101,10 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         public OfferViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            email=itemView.findViewById(R.id.emailverificationid);
+
             phone=itemView.findViewById(R.id.phoneverificationid);
             payment=itemView.findViewById(R.id.paymentverificationid);
             cnic=itemView.findViewById(R.id.cnicverificationid);
-            nooffer=itemView.findViewById(R.id.offerid);
             persondp=itemView.findViewById(R.id.personofferdp);
             ratingBar=itemView.findViewById(R.id.raatingofferid);
             name=itemView.findViewById(R.id.personnameid);

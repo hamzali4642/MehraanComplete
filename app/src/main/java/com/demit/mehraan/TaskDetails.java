@@ -1,11 +1,15 @@
 package com.demit.mehraan;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.internal.$Gson$Preconditions;
 
@@ -71,6 +76,42 @@ public class TaskDetails extends Fragment {
         makeoffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                AlertDialog.Builder builder= new AlertDialog.Builder((view.getContext()));
+                builder.setTitle("Make Offer");
+                builder.setMessage("Enter amount of offer");
+                final EditText offer= new EditText(view.getContext());
+                offer.setGravity(Gravity.CENTER_HORIZONTAL);
+                offer.setPadding(20,0,20,10);
+                offer.setHint("000");
+                builder.setView(offer);
+                builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String groupname= offer.getText().toString();
+                        if (TextUtils.isEmpty(groupname)){
+
+                            Toast.makeText(view.getContext(),"Please enter Some smount", Toast.LENGTH_SHORT).show();
+                        }
+
+                        else {
+
+
+
+                        }
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+
 
             }
         });

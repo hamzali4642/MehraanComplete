@@ -130,6 +130,7 @@
             android:layout_below="@+id/myassigntask">
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/myrrvtt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,6 +142,7 @@
                 />
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_below="@+id/myrrvtt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,31 +150,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 >
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:id="@+id/myemailverificationid"
-                    >
-
-                    <ImageView
-                        android:id="@+id/myemailverifyiconid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_email_black_24dp"/>
-
-                    <TextView
-                        android:layout_below="@id/myemailverifyiconid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Email"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="@color/colorgrey"/>
-
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"

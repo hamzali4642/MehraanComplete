@@ -120,7 +120,6 @@ public class MyOfferAdapter extends RecyclerView.Adapter<MyOfferAdapter.MyOfferV
             super(itemView);
 
 
-            email=itemView.findViewById(R.id.myemailverificationid);
             phone=itemView.findViewById(R.id.myphoneverificationid);
             payment=itemView.findViewById(R.id.mypaymentverificationid);
             cnic=itemView.findViewById(R.id.mycnicverificationid);

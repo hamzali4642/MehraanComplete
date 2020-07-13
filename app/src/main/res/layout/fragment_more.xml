@@ -21,18 +21,18 @@
 
 
         <TextView
-            android:id="@+id/Accountnameid"
+            android:id="@+id/accountnameid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/channeldpid"
+            android:layout_toRightOf="@+id/accountdpid"
             android:text="Account Name"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/channeldpid"
+            android:id="@+id/accountdpid"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
@@ -41,11 +41,13 @@
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
+            android:id="@+id/editbtnid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
+            android:backgroundTint="@color/colorWhite"
             android:drawableTint="@color/colorPrimary"
             android:background="@drawable/edit_text_back"
             android:drawableLeft="@drawable/ic_pen_black_24dp"
@@ -59,7 +61,7 @@
 
 
     <TextView
-        android:id="@+id/childaccountid"
+        android:id="@+id/skillsid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -77,7 +79,7 @@
 
     <TextView
 
-        android:id="@+id/textView6"
+        android:id="@+id/changepassid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -94,7 +96,7 @@
 
     <TextView
 
-        android:id="@+id/textView7"
+        android:id="@+id/verificationid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -111,7 +113,7 @@
 
     <TextView
 
-        android:id="@+id/textView9"
+        android:id="@+id/contactusid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -128,7 +130,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tandcid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -145,6 +147,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
     <TextView
+        android:id="@+id/logoutid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"

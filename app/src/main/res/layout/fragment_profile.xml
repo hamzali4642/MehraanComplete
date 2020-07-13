@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Profile">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/guideline37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backmytaskid"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@+id/backmytaskid"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="Profile"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline47"
+        app:layout_constraintStart_toStartOf="@+id/guideline46"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.504">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileimageid"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="5dp" />
+
+        <TextView
+            android:id="@+id/profiledpupdateid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profileimageid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_back"
+            android:backgroundTint="@android:color/black"
+            android:drawableLeft="@drawable/ic_pen_black_24dp"
+            android:drawableTint="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:text="Update"
+            android:textColor="@color/colorPrimary" />
+
+
+        <TextView
+            android:id="@+id/profilenaemid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view6"
+            android:gravity="center_horizontal"
+            android:text="Username"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profilecontactid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profilenaemid"
+            android:gravity="center_horizontal"
+            android:text="+92345678910"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_below="@id/profileimageid"
+            android:layout_margin="15dp"
+            android:alpha="0.25"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_below="@id/profilecontactid"
+            android:layout_margin="15dp"
+            android:alpha="0.25"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/profileemailid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view7"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/edit_text_back"
+            android:gravity="center_vertical"
+            android:hint="Email Address"
+            android:lines="1"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="15dp"
+            android:text="abc@gmail.com"
+            android:textColor="@color/colorPrimaryDark"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/profilepassid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileemailid"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/edit_text_back"
+            android:gravity="center_vertical"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="15dp"
+            android:text="abc@gmail.com"
+            android:textColor="@color/colorPrimaryDark"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/profilechangepassid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profilepassid"
+            android:layout_marginVertical="5dp"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="15dp"
+            android:text="Change password"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/updatebtnid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhite"
+            android:text="Update"
+            android:background="@drawable/button_back"
+            />
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
