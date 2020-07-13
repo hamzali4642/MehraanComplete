@@ -37,27 +37,14 @@
             android:textSize="20sp"
             android:textStyle="normal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Share"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:textSize="18sp"
-            android:textAllCaps="true"
-            />
-
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="10dp"
         app:layout_constraintTop_toTopOf="@+id/guideline37">
 
         <RelativeLayout
@@ -66,132 +53,125 @@
 
             <LinearLayout
                 android:id="@+id/taskstatusid"
-                android:layout_marginVertical="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
                 android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Open"
-                android:textSize="12sp"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:textColor="@color/colorWhite"
-                android:gravity="center"
-                android:background="@drawable/leftback"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Assigned"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:textColor="@color/colorWhite"
-                android:gravity="center"
-                android:textSize="12sp"
-                android:background="@color/colorgrey"
-                />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Completed"
+                    android:background="@drawable/leftback"
+                    android:gravity="center"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="5dp"
-                    android:textSize="12sp"
+                    android:text="Open"
                     android:textColor="@color/colorWhite"
-                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorgrey"
-                    />
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp"
+                    android:text="Assigned"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Reviewed"
-                    android:textSize="12sp"
+                    android:background="@color/colorgrey"
+                    android:gravity="center"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="5dp"
+                    android:text="Completed"
                     android:textColor="@color/colorWhite"
-                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/rightback"
-                    />
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp"
+                    android:text="Reviewed"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tasknameid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/taskstatusid"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
                 android:text="Task Name"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_below="@+id/taskstatusid"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="20dp"
                 android:textSize="15sp"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
 
             <RelativeLayout
                 android:id="@+id/posterinfo"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/tasknameid">
+                android:layout_below="@+id/tasknameid"
+                android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/posterdp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/ic_launcher_background"/>
+                    android:layout_marginVertical="5dp"
+                    android:src="@drawable/ic_launcher_background" />
+
                 <LinearLayout
-                    android:layout_toRightOf="@+id/posterdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_centerVertical="true"
-                    >
+                    android:layout_toRightOf="@+id/posterdp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="Posted by"
-                    android:textColor="@color/colorgrey"
-                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Posted by"
+                        android:textColor="@color/colorgrey"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Poster Name"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Poster Name"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:text="45 min ago"
                     android:textSize="12sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/view23"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginLeft="60dp"
                     android:alpha="0.5"
-                    android:layout_alignParentBottom="true"
                     android:background="@color/colorgrey"
                     app:layout_constraintBottom_toTopOf="@+id/guideline33"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -203,65 +183,62 @@
                 android:id="@+id/posterlocation"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/posterinfo">
+                android:layout_below="@+id/posterinfo"
+                android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/posterlocationicon"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/ic_location_on_black_24dp"/>
+                    android:layout_marginVertical="5dp"
+                    android:src="@drawable/ic_location_on_black_24dp" />
+
                 <LinearLayout
-                    android:layout_toRightOf="@+id/posterlocationicon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_toLeftOf="@+id/showonmapbtn"
                     android:layout_centerVertical="true"
-                    >
+                    android:layout_toLeftOf="@+id/showonmapbtn"
+                    android:layout_toRightOf="@+id/posterlocationicon"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
                         android:text="Location"
                         android:textColor="@color/colorgrey"
-                        />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/posterlocationtext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Poster Name"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="@color/colorPrimaryDark"
-                        />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/showonmapbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/showonmapbtn"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:text="Show on map"
-                    android:textSize="12sp"
                     android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/view55"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginLeft="60dp"
                     android:alpha="0.5"
-                    android:layout_alignParentBottom="true"
                     android:background="@color/colorgrey"
                     app:layout_constraintBottom_toTopOf="@+id/guideline33"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -273,42 +250,39 @@
                 android:id="@+id/duedateid"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@+id/posterlocation">
+                android:layout_below="@+id/posterlocation"
+                android:layout_marginHorizontal="20dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/dateiconid"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:src="@drawable/ic_date_range_black_24dp"/>
+                    android:layout_marginVertical="5dp"
+                    android:src="@drawable/ic_date_range_black_24dp" />
 
                 <LinearLayout
-                    android:layout_toRightOf="@+id/dateiconid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_centerVertical="true"
-                    >
+                    android:layout_toRightOf="@+id/dateiconid"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
                         android:text="Due Date"
                         android:textColor="@color/colorgrey"
-                        />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="25 June 2020"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="@color/colorPrimaryDark"
-                        />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -316,9 +290,9 @@
                     android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginLeft="60dp"
                     android:alpha="0.5"
-                    android:layout_alignParentBottom="true"
                     android:background="@color/colorgrey"
                     app:layout_constraintBottom_toTopOf="@+id/guideline33"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -328,49 +302,48 @@
 
             <RelativeLayout
                 android:id="@+id/budgetid"
-                android:layout_marginVertical="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorAccent"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/duedateid"
-                >
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@color/colorAccent">
 
                 <TextView
                     android:id="@+id/txttttt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Task Budget Estimated"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
+                    android:text="Task Budget Estimated"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_centerHorizontal="true"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/estimatedbudgetid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
                     android:layout_below="@id/txttttt"
                     android:layout_centerHorizontal="true"
                     android:text="Rs 50000"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
-                    />
+                    android:textStyle="bold" />
+
                 <Button
                     android:id="@+id/makeoffer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Make Offer"
-                    android:background="@drawable/button_back"
-                    android:textColor="@color/colorWhite"
                     android:layout_below="@id/estimatedbudgetid"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="20sp"
                     android:layout_marginTop="10dp"
-                    android:paddingHorizontal="10dp"/>
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/button_back"
+                    android:paddingHorizontal="10dp"
+                    android:text="Make Offer"
+                    android:textColor="@color/colorWhite" />
 
             </RelativeLayout>
 
@@ -378,46 +351,43 @@
                 android:id="@+id/txtxttxtx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Task Details"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/budgetid"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
-                />
+                android:text="Task Details"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/taskdetailsid"
-                android:layout_below="@id/txtxttxtx"
-                android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorgrey"
+                android:layout_below="@id/txtxttxtx"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Task details would be shown here"/>
+                android:text="Task details would be shown here"
+                android:textColor="@color/colorgrey"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txxxxxxxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Offers"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/taskdetailsid"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
-                />
+                android:text="Offers"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/offerlistid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txxxxxxxt"
-                android:layout_marginBottom="20dp"
-                />
+                android:layout_marginBottom="20dp" />
 
             <TextView
                 android:id="@+id/cmntid"
@@ -433,14 +403,14 @@
 
             <TextView
                 android:id="@+id/cmnttxtxt"
-                android:layout_below="@id/cmntid"
-                android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorgrey"
+                android:layout_below="@id/cmntid"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Comment below for more details, please do not share personal information, email, phone, skype ID or website link, as it is against our policy and your account may be blocked"/>
+                android:text="Comment below for more details, please do not share personal information, email, phone, skype ID or website link, as it is against our policy and your account may be blocked"
+                android:textColor="@color/colorgrey"
+                android:textStyle="bold" />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -450,6 +420,48 @@
                 android:layout_below="@+id/cmnttxtxt"
                 android:layout_marginTop="21dp"
                 android:layout_marginBottom="20dp" />
+
+
+            <ScrollView
+                android:id="@+id/scrllviewid2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/commentslistid"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:id="@+id/reviewtypeid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edit_text_back">
+
+                    <EditText
+                        android:id="@+id/edittextid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/sendbtnid"
+                        android:background="@drawable/edit_text_back"
+                        android:gravity="center_vertical"
+                        android:hint="Write your comment"
+                        android:padding="10dp"
+                        android:textColorHint="@color/colorgrey"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/sendbtnid"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@+id/edittextid"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="8dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_send_black_24dp" />
+                </RelativeLayout>
+
+
+            </ScrollView>
 
 
         </RelativeLayout>

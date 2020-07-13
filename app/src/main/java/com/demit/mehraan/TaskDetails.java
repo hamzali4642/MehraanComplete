@@ -17,6 +17,7 @@ public class TaskDetails extends Fragment {
     RecyclerView offerlist, commentslist;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
