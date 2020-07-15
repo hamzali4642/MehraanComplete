@@ -1,5 +1,6 @@
 package com.demit.mehraan;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -19,6 +21,7 @@ public class Profile extends Fragment {
     TextView updatedp,username,password, phone, changepassword;
     EditText email;
     Button update;
+    ImageView backprofile;
 
 
 
@@ -35,6 +38,19 @@ public class Profile extends Fragment {
         changepassword=view.findViewById(R.id.profilechangepassid);
         email=view.findViewById(R.id.profileemailid);
         update=view.findViewById(R.id.updatebtnid);
+        backprofile=view.findViewById(R.id.backprofileid);
+        backprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(v.getContext(),Dashboard.class);
+                intent.putExtra("back",4);
+                v.getContext().startActivity(intent);
+
+
+            }
+        });
+
 
         changepassword.setOnClickListener(new View.OnClickListener() {
             @Override

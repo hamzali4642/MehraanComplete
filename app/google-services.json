@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "692903592187",
+    "firebase_url": "https://chatapp-38c8c.firebaseio.com",
+    "project_id": "chatapp-38c8c",
+    "storage_bucket": "chatapp-38c8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692903592187:android:968106b8b273197c16705e",
+        "android_client_info": {
+          "package_name": "com.demit.mehraan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692903592187-pif3snmhujb68ut5ja9gcacacrb4fu7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXNyA46vcCPgb0vHMj8Nd9SC9gHPJQvUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692903592187-pif3snmhujb68ut5ja9gcacacrb4fu7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

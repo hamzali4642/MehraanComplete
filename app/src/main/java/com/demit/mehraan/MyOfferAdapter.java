@@ -56,33 +56,7 @@ public class MyOfferAdapter extends RecyclerView.Adapter<MyOfferAdapter.MyOfferV
         String timetxt=time[position];
         holder.time.setText(timetxt);
 
-        boolean emailtxt=email[position];
-        if(emailtxt==false){
 
-            holder.email.setAlpha((float) 0.5);
-
-        }
-
-        boolean phonetxt=phone[position];
-        if(phonetxt==false){
-
-            holder.phone.setAlpha((float) 0.5);
-
-        }
-
-        boolean paymenttxt=payment[position];
-        if(paymenttxt==false){
-
-            holder.payment.setAlpha((float) 0.5);
-
-        }
-
-        boolean cnictxt=cnic[position];
-        if(emailtxt==false){
-
-            holder.cnic.setAlpha((float) 0.5);
-
-        }
 
         holder.assign.setOnClickListener(new View.OnClickListener() {
             @Override

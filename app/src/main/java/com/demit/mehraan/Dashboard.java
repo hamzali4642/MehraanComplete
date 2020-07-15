@@ -9,20 +9,58 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Dashboard extends AppCompatActivity {
 
     BottomNavigationView navigation;
-
+    int back;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        this.back=getIntent().getIntExtra("back",0);
         navigation=(BottomNavigationView)findViewById(R.id.navigationid);
         navigation.setOnNavigationItemSelectedListener(navListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney()).commit();
+
+        if(back==1){
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney()).commit();
+
+        }
+
+        if(back==2){
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new MyTask()).commit();
+
+        }
+
+        if(back==3){
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new Messages()).commit();
+
+        }
+
+        if(back==4){
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new More()).commit();
+
+        }
+
+        else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney()).commit();
+
+        }
+
+
+
+
 
     }
 

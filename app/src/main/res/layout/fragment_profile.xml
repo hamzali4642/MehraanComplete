@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/backmytaskid"
+            android:id="@+id/backprofileid"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="14dp"
-            android:layout_toRightOf="@+id/backmytaskid"
+            android:layout_toRightOf="@+id/backprofileid"
             android:gravity="center_vertical"
             android:paddingHorizontal="20dp"
             android:text="Profile"
@@ -128,6 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/view7"
             android:layout_marginVertical="5dp"
+            android:textCursorDrawable="@null"
             android:background="@drawable/edit_text_back"
             android:gravity="center_vertical"
             android:hint="Email Address"
@@ -136,7 +137,6 @@
             android:paddingVertical="15dp"
             android:text="abc@gmail.com"
             android:textColor="@color/colorPrimaryDark"
-            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="15sp" />
 
         <TextView

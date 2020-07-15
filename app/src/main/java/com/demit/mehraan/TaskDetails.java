@@ -1,6 +1,7 @@
 package com.demit.mehraan;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -32,6 +33,11 @@ public class TaskDetails extends Fragment {
     ImageView sendbtn, backbtn;
     Button makeoffer;
     CircleImageView posterimage;
+    int a;
+
+    public TaskDetails(int a) {
+    this.a=a;
+    }
 
 
     @Override
@@ -61,6 +67,10 @@ public class TaskDetails extends Fragment {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Dashboard.class);
+                intent.putExtra("back",1);
+                startActivity(intent);
 
             }
         });
@@ -140,7 +150,13 @@ public class TaskDetails extends Fragment {
         boolean[] cnic={true,false,true};
         boolean[] payment={false,false,false};
 
-        offerlist.setAdapter(new OfferAdapter(name,dp,time,rating,review,email,phone,payment,cnic));
+        if (a==1){
+            offerlist.setAdapter(new OfferAdapter(name,dp,time,rating,review,email,phone,payment,cnic));
+        }
+
+        else if (a==2){
+            offerlist.setAdapter(new MyOfferAdapter(name,review,time,rating,dp,email,phone,payment,cnic));
+        }
 
         commentslist.setAdapter(new CommentsAdapter(comment, time, name,dp));
 

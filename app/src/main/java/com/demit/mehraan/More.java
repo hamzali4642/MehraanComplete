@@ -1,5 +1,6 @@
 package com.demit.mehraan;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,7 +36,53 @@ public class More extends Fragment {
             @Override
             public void onClick(View v) {
 
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("next",9);
+                startActivity(intent);
 
+            }
+        });
+
+        skills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("next",5);
+                v.getContext().startActivity(intent);
+
+            }
+        });
+
+        changepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("next",6);
+                startActivity(intent);
+
+            }
+        });
+
+        contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("next",7);
+                startActivity(intent);
+
+            }
+        });
+
+        tandc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("next",8);
+                startActivity(intent);
 
             }
         });

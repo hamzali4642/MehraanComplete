@@ -317,7 +317,7 @@
                 android:layout_below="@id/duedateid"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
-                android:background="@color/colorAccent">
+                android:background="@drawable/edit_text_back">
 
                 <TextView
                     android:id="@+id/txttttt"
@@ -454,6 +454,7 @@
                         android:background="@drawable/edit_text_back"
                         android:gravity="center_vertical"
                         android:hint="Write your comment"
+                        android:textCursorDrawable="@null"
                         android:padding="10dp"
                         android:textColorHint="@color/colorgrey"
                         android:textSize="15sp" />

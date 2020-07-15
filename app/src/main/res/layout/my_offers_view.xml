@@ -106,6 +106,7 @@
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/mymsgbtnid"
+                    app:fabSize="mini"
                     android:layout_toLeftOf="@+id/myassignbtnid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

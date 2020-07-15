@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:chatview="http://schemas.android.com/apk/res-auto"
-    tools:context=".ChatLayout">
+    tools:context=".TermAndConditions">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/backchatid"
+            android:id="@+id/backtandcid"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -29,47 +28,51 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="14dp"
-            android:layout_toRightOf="@+id/backchatid"
+            android:layout_toRightOf="@+id/backtandcid"
             android:gravity="center_vertical"
             android:paddingHorizontal="20dp"
-            android:text="Person Name"
+            android:text="Profile"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
             android:textStyle="normal" />
 
     </RelativeLayout>
 
-
-    <co.intentservice.chatui.ChatView
-        android:id="@+id/chat_view"
+    <ImageView
+        android:id="@+id/cover"
         android:layout_width="0dp"
         android:layout_height="0dp"
-
-        chatview:inputBackgroundColor="@color/colorAccent"
-        chatview:inputTextSize="15sp"
-        chatview:inputTextColor="@color/colorWhite"
-        chatview:inputHint="type here..."
-        chatview:inputHintColor="@color/colorgrey"
-        chatview:sendBtnIcon="@drawable/ic_send_black_24dp"
-        chatview:sendBtnIconTint="@color/colorPrimary"
-        chatview:sendBtnBackgroundTint="@color/colorPrimaryDark"
-        chatview:bubbleBackgroundRcv="@color/colorAccent"
-        chatview:bubbleBackgroundSend="@color/colorPrimaryDark"
-        chatview:bubbleElevation="elevated"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/melogo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline45"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/cover"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tandc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline45" />
 
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.07" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
