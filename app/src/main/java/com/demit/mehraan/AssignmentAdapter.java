@@ -1,6 +1,5 @@
 package com.demit.mehraan;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,43 +9,35 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.EarnMoneyViewHolder> {
-
+public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.AssignmentViewHolder> {
 
     private  String[] name, location, price, comments, offers;
     private  int[]  dp;
-    public int a;
 
 
-    public EarnMoneyAdapter(String[] name, String[] location, String[] price, String[] comments, String[] offers, int[] dp, int a) {
-
+    public AssignmentAdapter(String[] name, String[] location, String[] price, String[] comments, String[] offers, int[] dp) {
         this.name = name;
         this.location = location;
         this.price = price;
         this.comments = comments;
         this.offers = offers;
         this.dp = dp;
-        this.a = a;
-
     }
-
-
-
 
     @NonNull
     @Override
-    public EarnMoneyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AssignmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater= LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.task_list_view,parent,false);
 
-        return new EarnMoneyViewHolder(view);
+        return new AssignmentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EarnMoneyViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull AssignmentViewHolder holder, int position) {
         String nametxt=name[position];
         holder.taskname.setText(nametxt);
 
@@ -68,31 +59,12 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
             @Override
             public void onClick(View v) {
 
-                //if earn money
-               Intent intent=new Intent(v.getContext(),Details.class);
-               intent.putExtra("next",1);
-               intent.putExtra("a", a);
-
-               v.getContext().startActivity(intent);
-
-               /*
-                elseif( Posted tasks )
                 Intent intent=new Intent(v.getContext(),Details.class);
-                intent.putExtra("next",2);
+                intent.putExtra("next",3);
                 v.getContext().startActivity(intent);
-
-                elseif( Assigned tasks )
-
-                Intent intent=new Intent(v.getContext(),Details.class);
-                intent.putExtra("next",2);
-                v.getContext().startActivity(intent);
-                */
 
             }
         });
-
-
-
     }
 
     @Override
@@ -100,15 +72,13 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
         return name.length;
     }
 
-
-
-    public class EarnMoneyViewHolder extends RecyclerView.ViewHolder{
+    public class AssignmentViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView dp;
         TextView taskname, location, commentsoffers, price;
         Button open;
 
-        public EarnMoneyViewHolder(@NonNull View itemView) {
+        public AssignmentViewHolder(@NonNull View itemView) {
             super(itemView);
 
             dp=itemView.findViewById(R.id.taskdpid);
@@ -117,8 +87,6 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
             commentsoffers=itemView.findViewById(R.id.taskcomentsoffersid);
             price=itemView.findViewById(R.id.taskpriceid);
             open=itemView.findViewById(R.id.opentaskid);
-
-
 
         }
     }

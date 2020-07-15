@@ -82,6 +82,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="visible"
         android:layout_marginVertical="5dp"
         android:id="@+id/verificationinfo"
         android:layout_width="match_parent"
@@ -89,6 +90,7 @@
         android:layout_below="@+id/posterinfo">
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/rrvtt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,6 +103,7 @@
             />
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_below="@+id/rrvtt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,31 +111,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:id="@+id/emailverificationid"
-                >
-
-                <ImageView
-                    android:id="@+id/emailverifyiconid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_email_black_24dp"/>
-
-                <TextView
-                    android:layout_below="@id/emailverifyiconid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/colorgrey"/>
-
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -216,44 +194,6 @@
 
 
 
-    <RelativeLayout
-        android:visibility="invisible"
-        android:id="@+id/offerid"
-        android:background="@color/colorAccent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            >
-
-        <ImageView
-            android:id="@+id/imgg"
-            android:src="@drawable/ic_receipt_black_24dp"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_centerHorizontal="true"/>
-
-        <TextView
-            android:id="@+id/offertxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:layout_below="@id/imgg"
-            android:layout_centerHorizontal="true"
-            android:text="Waiting for offers"
-            android:textSize="15sp"
-            android:layout_marginBottom="20dp"
-            />
-        </RelativeLayout>
-
-    </RelativeLayout>
 
     </RelativeLayout>
 

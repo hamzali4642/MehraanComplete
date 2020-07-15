@@ -89,27 +89,38 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/myposterinfo">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rs-/4000"
+                    android:layout_alignTop="@+id/mymsgbtnid"
+                    android:layout_alignBottom="@+id/mymsgbtnid"
+                    android:textSize="20sp"
+                    android:layout_toLeftOf="@+id/mymsgbtnid"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/mymsgbtnid"
+                    app:fabSize="mini"
+                    android:layout_toLeftOf="@+id/myassignbtnid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimary"
-                    app:fabSize="mini"
                     android:src="@drawable/ic_message_black_24dp"
                     />
 
                <Button
                    android:id="@+id/myassignbtnid"
+                   android:layout_alignBottom="@+id/mymsgbtnid"
+                   android:layout_alignTop="@+id/mymsgbtnid"
+                   android:layout_alignParentRight="true"
                    android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
+                   android:layout_height="wrap_content"
                    android:text="Assign"
                    android:paddingHorizontal="10dp"
                    android:textColor="@color/colorWhite"
@@ -117,7 +128,6 @@
                    android:drawableLeft="@drawable/ic_check_box_black_24dp"
                    android:background="@drawable/button_back"/>
 
-            </LinearLayout>
 
         </RelativeLayout>
 
@@ -130,6 +140,7 @@
             android:layout_below="@+id/myassigntask">
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/myrrvtt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,6 +152,7 @@
                 />
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_below="@+id/myrrvtt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,31 +160,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 >
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:id="@+id/myemailverificationid"
-                    >
-
-                    <ImageView
-                        android:id="@+id/myemailverifyiconid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_email_black_24dp"/>
-
-                    <TextView
-                        android:layout_below="@id/myemailverifyiconid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Email"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="@color/colorgrey"/>
-
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"

@@ -52,7 +52,7 @@
         android:layout_height="0dp"
         android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
-        android:textCursorDrawable="@color/colorPrimary"
+        android:textCursorDrawable="@null"
         android:hint="e.g 03001234567"
         android:lines="1"
         android:paddingHorizontal="30dp"

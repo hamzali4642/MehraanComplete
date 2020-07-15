@@ -1,5 +1,6 @@
 package com.demit.mehraan;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,9 +17,6 @@ public class EarnMoney extends Fragment {
 
     RecyclerView earnmoneylist;
     ImageView tasksettings;
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,8 +43,8 @@ public class EarnMoney extends Fragment {
         String[] comments={"12","45","20","12","50","0","50"};
         String[] offers={"10","50","20","10","40","0","0"};
         int[] image={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
-
-        earnmoneylist.setAdapter(new EarnMoneyAdapter(name,location,price,comments,offers,image));
+        int a=1;
+        earnmoneylist.setAdapter(new EarnMoneyAdapter(name,location,price,comments,offers,image,a));
 
 
 

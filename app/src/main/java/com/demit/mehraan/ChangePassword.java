@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 public class ChangePassword extends Fragment {
 
-    EditText newpassword, confirmnewpassword;
+    EditText newpassword, confirmnewpassword, currentpass;
     Button change;
     ImageView close, back;
 
@@ -29,6 +29,19 @@ public class ChangePassword extends Fragment {
         newpassword=view.findViewById(R.id.changepassworid);
         confirmnewpassword=view.findViewById(R.id.changepassworid2);
         change=view.findViewById(R.id.changebtnid);
+        currentpass=view.findViewById(R.id.changepasswordcurrentid);
+
+        if (getActivity() instanceof MainActivity){
+
+            currentpass.setVisibility(View.GONE);
+
+        }
+        else if(getActivity() instanceof Details){
+
+            currentpass.setVisibility(View.VISIBLE);
+            close.setVisibility(View.GONE);
+
+        }
 
         change.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +56,14 @@ public class ChangePassword extends Fragment {
             @Override
             public void onClick(View v) {
 
+
+
                 Intent intent= new Intent(getContext(),Dashboard.class);
                 startActivity(intent);
+
+
+
+
 
             }
         });
@@ -53,10 +72,23 @@ public class ChangePassword extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getFragmentManager().beginTransaction().replace(R.id.signupfragid,new Mobile_Verification()).commit();
+
+                if (getActivity() instanceof MainActivity){
+                getFragmentManager().beginTransaction().replace(R.id.detailfragid,new Mobile_Verification()).commit();
+                }
+
+                if (getActivity() instanceof Details){
+
+                    Intent intent= new Intent(getContext(),Dashboard.class);
+                    intent.putExtra("back",4);
+                    startActivity(intent);
+
+
+                }
 
             }
         });
+
 
 
 

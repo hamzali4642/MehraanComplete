@@ -1,5 +1,6 @@
 package com.demit.mehraan;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -68,6 +69,18 @@ public class PostedTaskDetails extends Fragment {
 
         myofferlist.setAdapter(new MyOfferAdapter(name,review,time,rating,dp,email,phone,payment,cnic));
         mycommentslist.setAdapter(new CommentsAdapter(comment, time, name,dp));
+
+
+        mybackbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getContext(),Details.class);
+                intent.putExtra("back",2);
+                startActivity(intent);
+
+            }
+        });
 
 
 
