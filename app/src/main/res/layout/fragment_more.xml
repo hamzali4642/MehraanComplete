@@ -33,11 +33,14 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/accountdpid"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="20dp"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/melogo"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="4dp"
+            app:civ_border_overlay="false"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
