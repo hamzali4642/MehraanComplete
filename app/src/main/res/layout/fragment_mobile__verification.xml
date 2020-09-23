@@ -8,10 +8,23 @@
     tools:context=".Mobile_Verification">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mehranback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
         android:id="@+id/backmblverifybtnid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
+        android:visibility="gone"
         android:src="@drawable/ic_arrow_back_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
@@ -22,6 +35,7 @@
         android:id="@+id/closemblverifybtnid"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:layout_margin="10dp"
         android:src="@drawable/ic_close_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
@@ -31,6 +45,7 @@
 
 
     <TextView
+        android:id="@+id/heading"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
@@ -50,21 +65,23 @@
         android:id="@+id/phonenumberid"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/edit_text_back"
         android:gravity="center_vertical"
-        android:textCursorDrawable="@null"
         android:hint="e.g 03001234567"
         android:lines="1"
+        android:inputType="phone"
         android:paddingHorizontal="30dp"
         android:textColor="@color/colorPrimaryDark"
+        android:textCursorDrawable="@null"
         android:textSize="15sp"
-        android:layout_marginVertical="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
+        android:id="@+id/verifynumberid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_back"
@@ -72,11 +89,10 @@
         android:text="Next"
         android:textColor="@color/colorWhite"
         android:textSize="15sp"
-        android:id="@+id/verifynumberid"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

@@ -2,52 +2,82 @@ package com.demit.mehraan;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.EarnMoneyViewHolder> {
 
+    private  String[] name, location, price, comments, offers,taskIds,tasksttus,datetimes,duedates,detail,posterames;
+    private  String[]  dp;
+public Context context;
+int a,layoutcheck;
 
-    private  String[] name, location, price, comments, offers;
-    private  int[]  dp;
-    public int a;
 
 
-    public EarnMoneyAdapter(String[] name, String[] location, String[] price, String[] comments, String[] offers, int[] dp, int a) {
 
+    public EarnMoneyAdapter(String[] name,
+                            String[] location,
+                            String[] price,
+                            String[] comments,
+                            String[] offers, String[] image, String[] taskIds, String[] tasksttus, String[] datetimes, String[] duedates, String[] detail, String[] posterames,Context context,int a ,int layoutcheck) {
         this.name = name;
         this.location = location;
         this.price = price;
+        this.layoutcheck=layoutcheck;
         this.comments = comments;
         this.offers = offers;
-        this.dp = dp;
-        this.a = a;
+        this.dp =image;
+        this.taskIds=taskIds;
+        this.tasksttus=tasksttus;
+        this.datetimes=datetimes;
+        this.duedates=duedates;
+        this.detail=detail;
+        this.posterames=posterames;
+        this.context=context;
 
+        this.a=a;
     }
-
-
 
 
     @NonNull
     @Override
     public EarnMoneyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater= LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.task_list_view,parent,false);
-
+        View view;
+        if(layoutcheck==2){
+            view=inflater.inflate(R.layout.task_list_view,parent,false);
+        }else{
+            view=inflater.inflate(R.layout.assignment_view,parent,false);
+        }
         return new EarnMoneyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull EarnMoneyViewHolder holder, int position) {
 
-        String nametxt=name[position];
+        if(position %2 ==0){
+        holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.left_to_right1));
+        }else{
+        holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.right_to_left1));
+        }
+        try{
+            String nametxt=name[position];
         holder.taskname.setText(nametxt);
 
         String locationtxt=location[position];
@@ -57,40 +87,73 @@ public class EarnMoneyAdapter extends RecyclerView.Adapter<EarnMoneyAdapter.Earn
         String offerstxt=offers[position];
         holder.commentsoffers.setText(commenttxt+"   Comments       "+ offerstxt+"   Offers");
 
-        int dptxt=dp[position];
-        holder.dp.setImageResource(dptxt);
+                String dptxt=dp[position];
+            try{
+           Glide.with(context).load(Constants.ImageUrl+dptxt).into(holder.dp);}
+            catch (Exception e){}
+     //  holder.dp.setImageResource(dptxt);
 
         String pricetxt=price[position];
         holder.price.setText("Rs "+pricetxt);
 
 
+
+
         holder.open.setOnClickListener(new View.OnClickListener() {
+            private Context context;
             @Override
             public void onClick(View v) {
+                context=v.getContext();
+               Intent intent=new Intent(context,Details.class);
+                    intent.putExtra("taskid",taskIds[position]);
+                    intent.putExtra("taskstatus",tasksttus[position]);
+                SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+                String[] da=duedates[position].split("T");
+                String finaldate;
+                String dat=da[0].replaceAll("-","/");
+                try {
+                    Date date = format.parse(dat);
 
-                //if earn money
-               Intent intent=new Intent(v.getContext(),Details.class);
-               intent.putExtra("next",1);
-               intent.putExtra("a", a);
+                    String[] datw=date.toString().split(" ");
+                  finaldate=datw[0]+","+datw[1]+" "+datw[2];
+                    Log.d("datedarbar",finaldate.toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    finaldate=duedates[position];
+                }
+                intent.putExtra("duedates",finaldate);
+                    intent.putExtra("detail",detail[position]);
+                    intent.putExtra("postername",posterames[position]);
+                    intent.putExtra("price",price[position]);
+                    intent.putExtra("location",location[position]);
+                intent.putExtra("taskname",name[position]);
+                intent.putExtra("userimage",dptxt);
+                String[] daa=datetimes[position].split("T");
+                String finaldatee;
+                String datt=daa[0].replaceAll("-","/");
+                try {
+                    Date date = format.parse(datt);
 
-               v.getContext().startActivity(intent);
+                    String[] datw=date.toString().split(" ");
+                    finaldatee=datw[0]+","+datw[1]+" "+datw[2];
+                    Log.d("datedarbar",finaldate.toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    finaldatee=datetimes[position];
+                }
+                intent.putExtra("datetime",finaldatee);
 
-               /*
-                elseif( Posted tasks )
-                Intent intent=new Intent(v.getContext(),Details.class);
-                intent.putExtra("next",2);
-                v.getContext().startActivity(intent);
 
-                elseif( Assigned tasks )
 
-                Intent intent=new Intent(v.getContext(),Details.class);
-                intent.putExtra("next",2);
-                v.getContext().startActivity(intent);
-                */
+                    intent.putExtra("a",a);
+
+                intent.putExtra("next",a);
+                   context.startActivity(intent);
 
             }
         });
-
+        }
+        catch (Exception e ){e.printStackTrace();}
 
 
     }

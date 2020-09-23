@@ -8,8 +8,7 @@
     android:layout_marginHorizontal="20dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_marginVertical="5dp"
@@ -90,19 +89,19 @@
             android:layout_below="@+id/myposterinfo">
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Rs-/4000"
-                    android:layout_alignTop="@+id/mymsgbtnid"
-                    android:layout_alignBottom="@+id/mymsgbtnid"
-                    android:textSize="20sp"
-                    android:layout_toLeftOf="@+id/mymsgbtnid"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="10dp"
-                    />
+            <TextView
+                android:id="@+id/offeredamount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/mymsgbtnid"
+                android:layout_alignBottom="@+id/mymsgbtnid"
+                android:layout_toLeftOf="@+id/mymsgbtnid"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                android:text="Rs-/4000"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/mymsgbtnid"

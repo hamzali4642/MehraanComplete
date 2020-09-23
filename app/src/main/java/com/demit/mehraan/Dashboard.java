@@ -4,14 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.HashMap;
 
@@ -20,6 +19,7 @@ public class Dashboard extends AppCompatActivity {
     BottomNavigationView navigation;
     int back;
 
+    int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,7 @@ public class Dashboard extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(navListener);
 
         if(back==1){
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney()).commit();
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney(0,0,0.0,0.0,0)).commit();
         }
 
         if(back==2){
@@ -54,7 +52,7 @@ public class Dashboard extends AppCompatActivity {
         }
 
         else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,new EarnMoney(0,0,0.0,0.0,0)).commit();
 
         }
 
@@ -73,19 +71,24 @@ public class Dashboard extends AppCompatActivity {
             switch(menuItem.getItemId()){
 
                 case R.id.earn_money:
-                    selectedFragment=new EarnMoney();
+                    selectedFragment=new EarnMoney(0,0,0.0,0.0,0);
+                    i=0;
                     break;
                 case R.id.my_task:
                     selectedFragment=new MyTask();
+                    i=1;
                     break;
                 case R.id.post_task:
                     selectedFragment=new PostTask();
+                    i=1;
                     break;
                 case R.id.messages:
                     selectedFragment=new Messages();
+                    i=1;
                     break;
                 case R.id.more:
                     selectedFragment=new More();
+                    i=1;
                     break;
             }
 
@@ -95,5 +98,18 @@ public class Dashboard extends AppCompatActivity {
         }
     };
 
+    @SuppressLint("ResourceType")
+    @Override
+    public void onBackPressed() {
+        if(i==0){
+            super.onBackPressed();
+        }else{
+            Fragment selectedFragment=null;
+            selectedFragment=new EarnMoney(0,0,0.0,0.0,0);
+            getSupportFragmentManager().beginTransaction().replace(R.id.dashfragid,selectedFragment).commit();
+            i=0;
+            navigation.setSelectedItemId(0);
+        }
 
+    }
 }

@@ -7,6 +7,18 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".Signin">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/signinback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/loginbtnid"
         android:layout_width="wrap_content"
@@ -16,10 +28,10 @@
         android:background="@drawable/button_back"
         android:text="Login"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline12" />
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
 
     <EditText
@@ -31,6 +43,7 @@
         android:textCursorDrawable="@null"
         android:gravity="center_vertical"
         android:hint="e.g 03001234567"
+        android:inputType="phone"
         android:lines="1"
         android:paddingHorizontal="30dp"
         android:textColor="@color/colorPrimaryDark"
@@ -51,6 +64,7 @@
         android:gravity="center_vertical"
         android:hint="Password"
         android:lines="1"
+        android:inputType="textPassword"
         android:textCursorDrawable="@null"
         android:paddingHorizontal="30dp"
         android:textColor="@color/colorPrimaryDark"
@@ -82,13 +96,14 @@
         android:id="@+id/loginforgetpassid"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:gravity="center_vertical|right"
+        android:gravity="bottom|center_horizontal"
         android:paddingHorizontal="5dp"
         android:text="Forgot Password?"
         android:textColor="@color/colorAccent"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
@@ -96,16 +111,16 @@
         android:id="@+id/loginsignupid"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center_vertical|left"
+        android:gravity="center"
         android:paddingHorizontal="5dp"
         android:text="Sign up"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
 
     <androidx.constraintlayout.widget.Guideline

@@ -18,10 +18,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHolder> {
 
     private  String[] name,  review, time;
-    private int[] rating,dp ;
+    private int[] rating ;
+    private String[] dp;
     private boolean[] email, phone, payment, cnic;
+    private Context context;
 
-    public OfferAdapter(String[] name, int[] dp, String[] time, int[] rating, String[] review, boolean[] email, boolean[] phone, boolean[] payment, boolean[] cnic) {
+    public OfferAdapter(String[] name, String[] dp, String[] time, int[] rating, String[] review, boolean[] email, boolean[] phone, boolean[] payment, boolean[] cnic,Context context) {
         this.name = name;
         this.time = time;
         this.dp = dp;
@@ -31,6 +33,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         this.phone = phone;
         this.payment = payment;
         this.cnic = cnic;
+        this.context=context;
     }
 
     @NonNull
@@ -49,8 +52,13 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         String nametxt=name[position];
         holder.name.setText(nametxt);
 
-        int dptx=dp[position];
-        holder.persondp.setImageResource(dptx);
+
+
+        try{
+            String dptx=dp[position];
+            Glide.with(context).load(Constants.ImageUrl+dptx).into(holder.persondp);}
+        catch (Exception e ){}
+
 
         String reviewtxt=review[position];
         holder.reviews.setText(reviewtxt);

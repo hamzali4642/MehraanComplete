@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="5dp"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/reciever_message_textll"
+        android:background="@drawable/reciever_messages_layout">
+    <TextView
+        android:id="@+id/reciever_message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="receiver message here "
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="14sp"/>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/reciever_message_textdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date time"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:textSize="9dp"
+                android:textColor="@color/colorAccent"/>
+            
+        </RelativeLayout>
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/sender_message_textll"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sender_messages_layout">
+    <TextView
+        android:id="@+id/sender_message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="@+id/reciever_message_textll"
+        android:text="sender message here "
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:textStyle="bold"
+        android:textSize="14sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/sender_message_textdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date time"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:textSize="12dp"
+                android:textColor="@color/colorAccent"/>
+                
+            <ImageView
+                android:id="@+id/msgreadstatus"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/messagesenderimagell"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:background="@drawable/sender_messages_layout1"
+        android:layout_marginEnd="10dp">
+    <ImageView
+        android:id="@+id/messagesenderimage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/sender_image_textdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date time"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:textSize="9dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/imagereadstatus"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/messagerecieverimagell"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:background="@drawable/reciever_messages_layout1"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+    <ImageView
+        android:id="@+id/messagerecieverimage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/reciever_image_textdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date time"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:textSize="9dp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

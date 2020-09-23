@@ -8,6 +8,18 @@
     android:background="@color/colorPrimaryDark">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mblverifyback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
         android:id="@+id/backpinverifybtnid"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -30,6 +42,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
     <TextView
+        android:id="@+id/pin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -77,6 +90,23 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 
+    <com.chaos.view.PinView
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:itemCount="4"
+        app:itemRadius="15dp"
+        android:itemBackground="@color/white"
+        android:inputType="number"
+        android:layout_gravity="center"
+        app:cursorWidth="0dp"
+        app:cursorColor="@color/colorPrimary"
+        android:id="@+id/pinviewotp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"/>
     <LinearLayout
         android:id="@+id/otpid"
         android:layout_width="wrap_content"
@@ -84,6 +114,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="25dp"
+        android:visibility="gone"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"

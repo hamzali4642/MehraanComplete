@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Mehraan</string>
+    <string name="app_name">Mehran Experts</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="ForgetPassword">Forget Password</string>
+    <string name="signup">Sign Up</string>
 </resources>

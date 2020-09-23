@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
+            android:visibility="gone"
             android:src="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
@@ -67,6 +68,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="5dp"
+                    android:enabled="false"
                     android:text="Open"
                     android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
@@ -326,7 +328,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Change Task Status"
+                    android:text="Click here if task is Completed"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -341,7 +343,7 @@
                     android:layout_marginBottom="20sp"
                     android:background="@drawable/button_back"
                     android:paddingHorizontal="10dp"
-                    android:text="Open"
+                    android:text="Task Completed"
                     android:textColor="@color/colorWhite" />
 
             </RelativeLayout>
@@ -388,11 +390,76 @@
                 android:layout_below="@+id/mytxxxxxxxt"
                 android:layout_marginBottom="20dp" />
 
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_below="@id/myofferlistid"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/direction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_directions_24"
+                        android:background="@color/colorPrimary"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"/>
+                    <RelativeLayout
+                        android:layout_marginVertical="5dp"
+                        android:id="@+id/posterinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tasknameid">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/personofferdp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginVertical="5dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:src="@drawable/ic_launcher_background"/>
+
+
+                        <LinearLayout
+                            android:layout_toRightOf="@+id/personofferdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            >
+
+                            <TextView
+                                android:id="@+id/personnameid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="Person Name"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimary"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/mycmntid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/myofferlistid"
+                android:layout_below="@id/cardview"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="10dp"
                 android:text="Comments"

@@ -3,6 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="75dp"
     android:layout_marginTop="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="5dp">
 
@@ -60,6 +64,7 @@
             android:text="Lahore, Pakistan"
             android:textStyle="bold"
             android:gravity="center_vertical"
+            android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@+id/guideline30"
             app:layout_constraintEnd_toStartOf="@+id/guideline26"
             app:layout_constraintStart_toStartOf="@+id/guideline24"

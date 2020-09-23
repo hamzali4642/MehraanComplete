@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".More">
 
 
@@ -11,13 +12,20 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/signinback" />
 
 
         <TextView
@@ -38,9 +46,9 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="20dp"
             android:src="@drawable/melogo"
-            app:civ_border_color="@color/colorAccent"
-            app:civ_border_width="4dp"
+            app:civ_border_color="@color/colorPrimary"
             app:civ_border_overlay="false"
+            app:civ_border_width="4dp"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
@@ -50,10 +58,10 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
-            android:backgroundTint="@color/colorWhite"
-            android:drawableTint="@color/colorPrimary"
             android:background="@drawable/edit_text_back"
+            android:backgroundTint="@color/colorWhite"
             android:drawableLeft="@drawable/ic_pen_black_24dp"
+            android:drawableTint="@color/colorPrimary"
             android:gravity="center_vertical"
             android:paddingHorizontal="10dp"
             android:text="Edit"
@@ -71,13 +79,14 @@
         android:drawableLeft="@drawable/ic_build_black_24dp"
         android:drawablePadding="15dp"
         android:gravity="center_vertical"
+        android:textColor="@color/colorAccent"
         android:text="Skills"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
 
     <TextView
@@ -88,25 +97,9 @@
         android:layout_marginHorizontal="25dp"
         android:drawableLeft="@drawable/ic_https_black_24dp"
         android:drawablePadding="15dp"
+        android:textColor="@color/colorAccent"
         android:gravity="center_vertical"
         android:text="Change Password"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline10" />
-
-    <TextView
-
-        android:id="@+id/verificationid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="25dp"
-        android:drawableLeft="@drawable/ic_verified_user_black_24dp"
-        android:drawablePadding="15dp"
-        android:gravity="center_vertical"
-        android:text="Verification"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
@@ -120,6 +113,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
+        android:textColor="@color/colorAccent"
         android:drawableLeft="@drawable/ic_email_more_24dp"
         android:drawablePadding="15dp"
         android:drawableTint="@color/colorPrimary"
@@ -144,6 +138,8 @@
         android:text="Terms and Conditions"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,6 +157,7 @@
         android:text="Logout"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,7 +170,7 @@
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -184,7 +181,7 @@
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -195,7 +192,7 @@
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -205,7 +202,7 @@
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -215,18 +212,11 @@
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
         android:alpha="0.25"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"

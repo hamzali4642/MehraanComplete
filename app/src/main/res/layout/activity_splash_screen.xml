@@ -4,34 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#1C1C1C"
     tools:context=".SplashScreen">
 
 
     <ImageView
-        android:id="@+id/goid"
+        android:id="@+id/logoid"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingVertical="25dp"
-        android:paddingLeft="50dp"
-        android:src="@drawable/go"
+        android:src="@drawable/mehranlogo"
         app:layout_constraintBottom_toTopOf="@+id/guideline50"
-        app:layout_constraintEnd_toStartOf="@+id/guideline55"
+        app:layout_constraintEnd_toStartOf="@+id/guideline54"
         app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="@+id/guideline53"
         app:layout_constraintTop_toTopOf="@+id/guideline51" />
 
     <ImageView
-        android:id="@+id/viralid"
+        android:id="@+id/creditid"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingRight="50dp"
-        android:src="@drawable/viral"
-        app:layout_constraintBottom_toTopOf="@+id/guideline50"
+        android:src="@drawable/credit"
+        app:layout_constraintBottom_toTopOf="@+id/guideline49"
         app:layout_constraintEnd_toStartOf="@+id/guideline54"
-        app:layout_constraintStart_toStartOf="@+id/guideline55"
-        app:layout_constraintTop_toTopOf="@+id/guideline51" />
-
+        app:layout_constraintStart_toStartOf="@+id/guideline53"
+        app:layout_constraintTop_toTopOf="@+id/guideline48" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline50"
@@ -45,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline53"
@@ -62,10 +59,17 @@
         app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline55"
+        android:id="@+id/guideline48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.47" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

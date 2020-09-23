@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".TaskFilters">
 
 
@@ -11,7 +12,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +79,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Price Range               RS.200     -     Rs.999999"
+        android:text="Price Range               RS.1     -     Rs.99999"
         android:textColor="@color/colorgrey"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -152,7 +153,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="20dp"
         android:gravity="center_vertical|right"
-        android:text="5 km"
+        android:text="Everywhere"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -282,11 +283,11 @@
         app:layout_constraintTop_toTopOf="@+id/guideline35"
         app:left_thumb_color="@color/colorPrimary"
         app:left_thumb_color_pressed="@color/colorPrimary"
-        app:max_value="999999"
-        app:min_value="200"
+        app:max_value="99999"
+        app:min_value="1"
         app:right_thumb_color="@color/colorPrimary"
         app:right_thumb_color_pressed="@color/colorPrimary"
-        app:steps="5000" />
+        app:steps="1000" />
 
     <View
         android:id="@+id/view2"

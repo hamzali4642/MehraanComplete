@@ -292,7 +292,7 @@
                 android:id="@+id/assmapfrag"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:name="com.demit.mehraan.More"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_marginVertical="5dp"
                 android:layout_below="@+id/assposterlocation"
                 />

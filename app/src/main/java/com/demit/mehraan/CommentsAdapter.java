@@ -1,5 +1,6 @@
 package com.demit.mehraan;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +11,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder> {
     private  String[] comment, time, name;
-    private int[] dp;
+    private String[] dp;
+    private Context context;
 
-    public CommentsAdapter(String[] comment, String[] time, String[] name, int[] dp) {
+    public CommentsAdapter(String[] comment, String[] time, String[] name, String[] dp, Context context) {
         this.comment = comment;
         this.time = time;
         this.name = name;
         this.dp = dp;
+        this.context=context;
+
     }
 
     @NonNull
@@ -39,8 +45,11 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
         String nametxt=name[position];
         holder.name.setText(nametxt);
 
-        int dptx=dp[position];
-        holder.commentdp.setImageResource(dptx);
+        String dptx=dp[position];
+        try{
+        Glide.with(context).load(Constants.ImageUrl+dptx).into(holder.commentdp);}
+        catch (Exception e ){}
+       // holder.commentdp.setImageResource(dptx);
 
         String cmnttxt=comment[position];
         holder.comment.setText(cmnttxt);

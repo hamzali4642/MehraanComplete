@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
+            android:visibility="gone"
             android:src="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
@@ -45,6 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
+        android:visibility="gone"
         chatview:inputBackgroundColor="@color/colorAccent"
         chatview:inputTextSize="15sp"
         chatview:inputTextColor="@color/colorWhite"
@@ -61,7 +63,94 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline37">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatlistt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/sendll"/>
 
+
+        <LinearLayout
+            android:id="@+id/sendll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:src="@drawable/gallery"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/files"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="1dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/text_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:background="@android:color/transparent"
+                        android:hint="Write a message..."
+                        android:imeOptions="actionSearch"
+                        android:layout_marginLeft="10dp"
+                        android:padding="10dp"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:clickable="true"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:background="#4c00ff"
+                app:elevation="1dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_send"
+                app:useCompatPadding="false" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline37"

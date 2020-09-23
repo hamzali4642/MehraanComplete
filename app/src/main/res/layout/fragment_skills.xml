@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Skills">
 
@@ -11,7 +12,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +22,7 @@
             android:id="@+id/backskillsid"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_arrow_back_black_24dp" />
 
@@ -33,10 +35,73 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="20dp"
             android:text="Skills"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="normal" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline37">
+
+    <AutoCompleteTextView
+        android:layout_margin="5dp"
+            android:id="@+id/skillslistid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view7"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/edit_text_back"
+        android:gravity="center_vertical"
+        android:hint="Skill"
+        android:lines="1"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textCursorDrawable="@null"
+        android:textSize="15sp"
+        android:completionThreshold="1"
+        />
+
+    <Button
+        android:id="@+id/addskillbtnid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/skillslistid"
+        android:layout_alignBottom="@+id/skillslistid"
+        android:layout_alignRight="@+id/skillslistid"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/profilechangepassid"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
+        android:text="Add"
+        android:background="@drawable/button_back"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="5dp"
+            android:id="@+id/skilllistid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/saveskillbtn"
+            android:layout_below="@+id/addskillbtnid"
+            />
+
+        <Button
+            android:id="@+id/saveskillbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Save"
+            android:background="@drawable/button_back"
+            android:textColor="@color/white"/>
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline

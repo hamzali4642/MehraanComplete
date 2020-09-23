@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="25dp"
+    tools:context=".UsesMapsRedirect">
+
+    <ImageView
+        android:id="@+id/ig1"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/startid"
+        android:alpha="0.5"
+        android:layout_alignBottom="@id/currentid"
+        android:src="@drawable/iconloc"
+        android:layout_marginLeft="15dp"
+        />
+
+    <TextView
+        android:id="@+id/startid"
+        android:layout_toRightOf="@+id/ig1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/mapbackstroke"
+        android:layout_marginHorizontal="15dp"
+        android:paddingVertical="8dp"
+        android:layout_marginBottom="5dp"
+        android:text="Final Destination"
+        android:textStyle="normal"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:hint="Starting Locaion"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <TextView
+        android:layout_toRightOf="@+id/ig1"
+        android:layout_below="@+id/startid"
+        android:id="@+id/currentid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/mapbackstroke"
+        android:layout_marginHorizontal="15dp"
+        android:paddingVertical="8dp"
+        android:textSize="14sp"
+        android:text="Current Location"
+        android:textStyle="normal"
+        android:paddingHorizontal="15dp"
+        android:hint="Current Location"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <fragment
+        android:id="@+id/mapfragfragid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/estimatedtimeid"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_below="@+id/currentid"/>
+
+
+    <TextView
+        android:id="@+id/estimatedtimeid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="normal"
+        android:textSize="18sp"
+        android:layout_above="@+id/previewbtnid"
+        android:layout_marginLeft="35dp"
+        android:layout_marginVertical="10dp"
+        android:text="1 hr, 25 min"
+        android:gravity="center_vertical|left"
+        />
+
+    <Button
+        android:id="@+id/previewbtnid"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:drawableLeft="@drawable/ic_arrow_right_black_24dp"
+        android:background="@drawable/roundedbuttonback"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="15dp"
+        android:text="Preview"
+        android:textColor="@color/colorWhite"
+        />
+
+
+
+</RelativeLayout>
