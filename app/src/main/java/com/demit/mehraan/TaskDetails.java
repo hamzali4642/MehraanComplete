@@ -35,6 +35,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.demit.mehraan.ContextClass.JWTget;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,6 +44,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.internal.$Gson$Preconditions;
 import com.trenzlr.firebasenotificationhelper.FirebaseNotificationHelper;
 
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -177,48 +180,118 @@ public class TaskDetails extends Fragment {
             @Override
             public void onClick(View v) {
 
-                        AlertDialog.Builder builder= new AlertDialog.Builder((view.getContext()));
-                        builder.setTitle("Make Offer");
-                        builder.setMessage("Enter amount of offer");
-                        final EditText offer= new EditText(view.getContext());
-                        offer.setInputType(InputType.TYPE_CLASS_NUMBER);
-                        offer.setGravity(Gravity.CENTER_HORIZONTAL);
-                        offer.setPadding(20,0,20,10);
-                        offer.setHint(price);
-                        builder.setView(offer);
-                        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String groupname= offer.getText().toString();
-                                if (TextUtils.isEmpty(groupname)){
-                                    Toast.makeText(view.getContext(),"Please enter Some amount", Toast.LENGTH_SHORT).show();
-                                }else if(groupname.length()>7){
-                                    Toast.makeText(view.getContext(),"Invalid amount", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
-                                    offerdetail=groupname;
-                                    offer(offerdetail);
-                                }
 
+
+
+                SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+
+                String id;
+                try {
+                    id = new JWTget(getContext()).jwtverifier(sharedpreferences.getString("token",""),"Id");
+
+                    reference.child("Users").child(id).child("date").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            if(!snapshot.exists()){
+                                Toast.makeText(getContext(), "You are not registered.\n Register your self to continue", Toast.LENGTH_SHORT).show();
+                            }else{
+                                String currentdate, adddate;
+                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                                Date datee = new Date();
+                                Log.d("Date", formatter.format(datee));
+
+                                currentdate = formatter.format(datee);
+                                adddate = snapshot.getValue().toString();
+
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                                Date cdate, adate;
+                                try {
+                                    cdate = simpleDateFormat.parse(currentdate);
+                                    adate = simpleDateFormat.parse(adddate);
+                                    long cudate = cdate.getTime();
+                                    long addate = adate.getTime();
+                                    Period period = new org.joda.time.Period(addate, cudate, PeriodType.months());
+                                    Log.d("date", period.getMonths() + "");
+
+                                    Toast.makeText(getContext(), period.getMonths()+"", Toast.LENGTH_SHORT).show();
+                                    if(period.getMonths() >=1){
+                                        Toast.makeText(getContext(), "You are not registered.\n Register your self to continue", Toast.LENGTH_SHORT).show();
+                                    }else {
+
+
+                                        AlertDialog.Builder builder= new AlertDialog.Builder((view.getContext()));
+                                        builder.setTitle("Make Offer");
+                                        builder.setMessage("Enter amount of offer");
+                                        final EditText offer= new EditText(view.getContext());
+                                        offer.setInputType(InputType.TYPE_CLASS_NUMBER);
+                                        offer.setGravity(Gravity.CENTER_HORIZONTAL);
+                                        offer.setPadding(20,0,20,10);
+                                        offer.setHint(price);
+                                        builder.setView(offer);
+                                        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                String groupname= offer.getText().toString();
+                                                if (TextUtils.isEmpty(groupname)){
+                                                    Toast.makeText(view.getContext(),"Please enter Some amount", Toast.LENGTH_SHORT).show();
+                                                }else if(groupname.length()>7){
+                                                    Toast.makeText(view.getContext(),"Invalid amount", Toast.LENGTH_SHORT).show();
+                                                }
+                                                else {
+                                                    offerdetail=groupname;
+                                                    offer(offerdetail);
+                                                }
+
+                                            }
+
+
+                                        });
+                                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                                        final AlertDialog dialog = builder.create();
+                                        dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+                                            @Override
+                                            public void onShow(DialogInterface arg0) {
+                                                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+                                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+                                            }});
+                                        dialog.show();
+
+
+
+                                    }
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
+                        }
 
-            });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                final AlertDialog dialog = builder.create();
-                dialog.setOnShowListener( new DialogInterface.OnShowListener() {
-                    @Override
-                    public void onShow(DialogInterface arg0) {
-                        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
-                        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
-                    }});
-                dialog.show();
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+
+
+
+
 //                builder.show();
         }});
 

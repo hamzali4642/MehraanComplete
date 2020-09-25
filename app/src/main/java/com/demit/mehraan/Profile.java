@@ -272,7 +272,7 @@ public class Profile extends Fragment implements BSImagePicker.OnMultiImageSelec
     @Override
     public void loadImage(Uri imageUri, ImageView ivImage) {
 //        this.dp=ivImage;
-        Glide.with(getContext()).load(imageUri).into(dp);
+        Glide.with(getContext()).load(imageUri).into(ivImage);
     }
 
     @Override
