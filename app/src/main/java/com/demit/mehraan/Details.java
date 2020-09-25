@@ -13,6 +13,7 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        String userid = getIntent().getStringExtra("userid");
         String detail=getIntent().getStringExtra("detail");
         String taskstatus=getIntent().getStringExtra("taskstatus");
         String duedates=getIntent().getStringExtra("duedates");
@@ -29,7 +30,7 @@ public class Details extends AppCompatActivity {
 
         if (next==1){
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,postername,price,location,userimage,taskdate)).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,postername,price,location,userimage,taskdate,userid)).commit();
 
         }
 

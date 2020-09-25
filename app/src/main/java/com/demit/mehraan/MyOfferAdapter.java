@@ -26,6 +26,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.demit.mehraan.ContextClass.JWTget;
+import com.demit.mehraan.ContextClass.SendNotification;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -204,7 +206,19 @@ public class MyOfferAdapter extends RecyclerView.Adapter<MyOfferAdapter.MyOfferV
 
                 context.startActivity(new Intent(context,BridgeActivity.class));
 
-                sendNotification(userid.toString());
+                try {
+                    SharedPreferences sharedPreferences=PreferenceManager.getDefaultSharedPreferences(context);
+                    String token =sharedPreferences.getString("token","");
+                    String name= new JWTget(context).jwtverifier(token,"unique_name");
+
+                    SendNotification sendNotification =new SendNotification(context,
+                            userid,"Assigned Task",name +"assigned you task.");
+                    sendNotification.send();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         }, new Response.ErrorListener() {
             @Override

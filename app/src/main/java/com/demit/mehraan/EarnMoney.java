@@ -40,6 +40,7 @@ public class EarnMoney extends Fragment {
     RecyclerView earnmoneylist;
     ImageView tasksettings;
 //taskId,taskName,price,location,dateTime,taskStatus
+    ArrayList<String> userid = new ArrayList<>();
     ArrayList<String> taskID=new ArrayList<>();
     ArrayList<String> taskName=new ArrayList<>();
     ArrayList<String> taskStatus=new ArrayList<>();
@@ -56,7 +57,7 @@ public class EarnMoney extends Fragment {
     Integer minprice , maxprice,radius;
     Double latitudee,longitudee;
     SharedPreferences sharedpreferences;
-    EarnMoneyAdapter adapter;
+    EarnMoneyAdapter1 adapter;
     int namesize;
 
     SwipeRefreshLayout refreshLayout;
@@ -111,6 +112,13 @@ public class EarnMoney extends Fragment {
         for(int i=0;i<tasknamesize;i++)
         {
             names.add(sharedpreferences.getString("taskname" + i, null));
+        }
+
+        ArrayList<String> user =new ArrayList<>();
+        int usersize =sharedPreferences.getInt("useridsize",0);
+        for(int i=0;i<usersize;i++)
+        {
+            user.add(sharedpreferences.getString("userid" + i, null));
         }
         ArrayList<String> prices = new ArrayList<>();
 
@@ -214,10 +222,12 @@ public class EarnMoney extends Fragment {
         String[] comment=commentss.toArray(new String[commentss.size()]);
         String[] offer=offerss.toArray(new String[offerss.size()]);
         String[] image=profimags.toArray(new String[profimags.size()]);
+        String[] useridd=user.toArray(new String[user.size()]);
 
         //int[] image={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
 
-adapter=new EarnMoneyAdapter(name,location,price,comment,offer,image,taskIds,tasksttus,datetimes,duedates,detail,posterames,getContext(),1,2);
+adapter=new EarnMoneyAdapter1(name,location,price,comment,offer,image,
+        taskIds,tasksttus,datetimes,duedates,detail,posterames,getContext(),1,2,useridd);
 earnmoneylist.setAdapter(adapter);
 
 
@@ -286,7 +296,8 @@ earnmoneylist.setAdapter(adapter);
             for(int i=0;i<jsonArray.length();i++) {
 
                 String pricee = jsonArray.getJSONObject(i).get("price").toString();
-                if(minprice==0 && maxprice==0 ){
+//                if(minprice==0 && maxprice==0 ){
+                    userid.add(jsonArray.getJSONObject(i).getString("userid"));
                     taskID.add(jsonArray.getJSONObject(i).get("taskId").toString());
                     taskName.add(jsonArray.getJSONObject(i).get("name").toString());
                     taskStatus.add(jsonArray.getJSONObject(i).get("taskStatus").toString());
@@ -308,79 +319,84 @@ earnmoneylist.setAdapter(adapter);
                     profimage.add(img);
 
                     Log.d("pindi_*", "123" + taskID.toString() + taskName.toString() + taskID.toString());
-                }else
-                {
-                if ((Integer.valueOf(pricee) <= maxprice && Integer.valueOf(pricee) >= minprice)){
-
-                    if(latitudee==0.0 && longitudee== 0.0){
-
-                        Log.d ("check",latitudee+"\n0 wali\n"+longitudee);
-                taskID.add(jsonArray.getJSONObject(i).get("taskId").toString());
-                taskName.add(jsonArray.getJSONObject(i).get("name").toString());
-                taskStatus.add(jsonArray.getJSONObject(i).get("taskStatus").toString());
-                location.add(jsonArray.getJSONObject(i).get("location").toString());
-                dateTime.add(jsonArray.getJSONObject(i).get("datetime").toString());
-                price.add(jsonArray.getJSONObject(i).get("price").toString());
-
-                duedate.add(jsonArray.getJSONObject(i).get("duedate").toString());
-                detail.add(jsonArray.getJSONObject(i).get("detail").toString());
-                postername.add(jsonArray.getJSONObject(i).get("userName").toString());
-                comments.add(jsonArray.getJSONObject(i).get("commentsCount").toString());
-                offers.add(jsonArray.getJSONObject(i).get("offersCount").toString());
-                String img = jsonArray.getJSONObject(i).get("userprofileimage").toString();
-                if (img.equals("null") || img == null || img.equals("")) {
-                    img = "http://tcap.pbworks.com/f/1435170280/myAvatar.png";
-                }
-
-                profimage.add(img);
-
-                Log.d("pindi_*", "123" + taskID.toString() + taskName.toString() + taskID.toString());
-                }else{
-
-                        taskName.clear();
-                        price.clear();
-                        location.clear();
-                        taskID.clear();
-                        taskStatus.clear();
-                        dateTime.clear();
-                        duedate.clear();
-                        detail.clear();
-                        postername.clear();
-                        comments.clear();
-                        profimage.clear();
-                        offers.clear();
+//                }
 
 
-                        String directionn = jsonArray.getJSONObject(i).get("directions").toString();
-                        String[] directionss=directionn.split("@");
-                        Log.d("tag",directionss.length+"");
-                if(checklocation(Double.parseDouble(directionss[0]),Double.parseDouble(directionss[1]))){
-//                    Toast.makeText(getActivity(), "abc", Toast.LENGTH_SHORT).show();
-                    taskID.add(jsonArray.getJSONObject(i).get("taskId").toString());
-                    taskName.add(jsonArray.getJSONObject(i).get("name").toString());
-                    taskStatus.add(jsonArray.getJSONObject(i).get("taskStatus").toString());
-                    location.add(jsonArray.getJSONObject(i).get("location").toString());
-                    dateTime.add(jsonArray.getJSONObject(i).get("datetime").toString());
-                    price.add(jsonArray.getJSONObject(i).get("price").toString());
 
-                    duedate.add(jsonArray.getJSONObject(i).get("duedate").toString());
-                    detail.add(jsonArray.getJSONObject(i).get("detail").toString());
-                    postername.add(jsonArray.getJSONObject(i).get("userName").toString());
-                    comments.add(jsonArray.getJSONObject(i).get("commentsCount").toString());
-                    offers.add(jsonArray.getJSONObject(i).get("offersCount").toString());
-                    String img = jsonArray.getJSONObject(i).get("userprofileimage").toString();
-                    if (img.equals("null") || img == null || img.equals("")) {
-                        img = "http://tcap.pbworks.com/f/1435170280/myAvatar.png";
-                    }
 
-                    profimage.add(img);
-
-                    Log.d("pindi_*", "123" + taskID.toString() + taskName.toString() + taskID.toString());
-                }
-                }
-             }
-
-            }
+//                else
+//                {
+//                if ((Integer.valueOf(pricee) <= maxprice && Integer.valueOf(pricee) >= minprice)){
+//
+//                    if(latitudee==0.0 && longitudee== 0.0){
+//
+//                        Log.d ("check",latitudee+"\n0 wali\n"+longitudee);
+//                taskID.add(jsonArray.getJSONObject(i).get("taskId").toString());
+//                taskName.add(jsonArray.getJSONObject(i).get("name").toString());
+//                taskStatus.add(jsonArray.getJSONObject(i).get("taskStatus").toString());
+//                location.add(jsonArray.getJSONObject(i).get("location").toString());
+//                dateTime.add(jsonArray.getJSONObject(i).get("datetime").toString());
+//                price.add(jsonArray.getJSONObject(i).get("price").toString());
+//
+//                duedate.add(jsonArray.getJSONObject(i).get("duedate").toString());
+//                detail.add(jsonArray.getJSONObject(i).get("detail").toString());
+//                postername.add(jsonArray.getJSONObject(i).get("userName").toString());
+//                comments.add(jsonArray.getJSONObject(i).get("commentsCount").toString());
+//                offers.add(jsonArray.getJSONObject(i).get("offersCount").toString());
+//                String img = jsonArray.getJSONObject(i).get("userprofileimage").toString();
+//                if (img.equals("null") || img == null || img.equals("")) {
+//                    img = "http://tcap.pbworks.com/f/1435170280/myAvatar.png";
+//                }
+//
+//                profimage.add(img);
+//
+//                Log.d("pindi_*", "123" + taskID.toString() + taskName.toString() + taskID.toString());
+//                }else{
+//
+//                        taskName.clear();
+//                        price.clear();
+//                        location.clear();
+//                        taskID.clear();
+//                        taskStatus.clear();
+//                        dateTime.clear();
+//                        duedate.clear();
+//                        detail.clear();
+//                        postername.clear();
+//                        comments.clear();
+//                        profimage.clear();
+//                        offers.clear();
+//
+//
+//                        String directionn = jsonArray.getJSONObject(i).get("directions").toString();
+//                        String[] directionss=directionn.split("@");
+//                        Log.d("tag",directionss.length+"");
+//                if(checklocation(Double.parseDouble(directionss[0]),Double.parseDouble(directionss[1]))){
+////                    Toast.makeText(getActivity(), "abc", Toast.LENGTH_SHORT).show();
+//                    taskID.add(jsonArray.getJSONObject(i).get("taskId").toString());
+//                    taskName.add(jsonArray.getJSONObject(i).get("name").toString());
+//                    taskStatus.add(jsonArray.getJSONObject(i).get("taskStatus").toString());
+//                    location.add(jsonArray.getJSONObject(i).get("location").toString());
+//                    dateTime.add(jsonArray.getJSONObject(i).get("datetime").toString());
+//                    price.add(jsonArray.getJSONObject(i).get("price").toString());
+//
+//                    duedate.add(jsonArray.getJSONObject(i).get("duedate").toString());
+//                    detail.add(jsonArray.getJSONObject(i).get("detail").toString());
+//                    postername.add(jsonArray.getJSONObject(i).get("userName").toString());
+//                    comments.add(jsonArray.getJSONObject(i).get("commentsCount").toString());
+//                    offers.add(jsonArray.getJSONObject(i).get("offersCount").toString());
+//                    String img = jsonArray.getJSONObject(i).get("userprofileimage").toString();
+//                    if (img.equals("null") || img == null || img.equals("")) {
+//                        img = "http://tcap.pbworks.com/f/1435170280/myAvatar.png";
+//                    }
+//
+//                    profimage.add(img);
+//
+//                    Log.d("pindi_*", "123" + taskID.toString() + taskName.toString() + taskID.toString());
+//                }
+//                }
+//             }
+//
+//            }
 
             }
 
@@ -393,6 +409,7 @@ earnmoneylist.setAdapter(adapter);
             String[] datetime=dateTime.toArray(new String[dateTime.size()]);
             String[] duedates=duedate.toArray(new String[duedate.size()]);
             String[] details=detail.toArray(new String[detail.size()]);
+            String[] userids = userid.toArray(new String[userid.size()]);
             String[] posterames=postername.toArray(new String[postername.size()]);
             int[] image={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
             String[] comment=comments.toArray(new String[comments.size()]);
@@ -406,6 +423,15 @@ earnmoneylist.setAdapter(adapter);
                 editor.remove("profimage" + i);
                 editor.putString("profimage" + i,  profimag[i]);
             }
+
+
+            editor.putInt("useridsize", profimag.length);
+            for(int i=0;i<userids.length;i++)
+            {
+                editor.remove("userid" + i);
+                editor.putString("userid" + i,  userids[i]);
+            }
+
             editor.putInt("commentssize", comment.length);
             for(int i=0;i<comment.length;i++)
             {

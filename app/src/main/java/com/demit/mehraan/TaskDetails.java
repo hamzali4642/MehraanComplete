@@ -36,6 +36,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.demit.mehraan.ContextClass.JWTget;
+import com.demit.mehraan.ContextClass.SendNotification;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,7 +83,9 @@ public class TaskDetails extends Fragment {
     String offerdetail="";
     String location,userimage,date;
 
-    public TaskDetails(String detail, String taskstatus, String duedates, String taskid, String postername,String price,String location,String userimage,String date) {
+    String useridd;
+    public TaskDetails(String detail, String taskstatus, String duedates, String taskid, String postername,String price,String location,String userimage,String date
+    ,String useridd) {
         this.detail=detail;
         this.taskstatus=taskstatus;
         this.duedates=duedates;
@@ -92,6 +95,7 @@ public class TaskDetails extends Fragment {
         this.userimage=userimage;
         this.date=date;
         this.location=location;
+        this.useridd = useridd;
     }
 
 
@@ -100,6 +104,7 @@ public class TaskDetails extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_task_details, container, false);
 
+        Log.d("userid",useridd);
         open=view.findViewById(R.id.openid);
         assigned=view.findViewById(R.id.assignedid);
         completed=view.findViewById(R.id.completedid);
@@ -363,15 +368,11 @@ public class TaskDetails extends Fragment {
            // URL="https://httpbin.org/post";
 
 
+
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("OfferedAmount",Integer.valueOf(offerdetail));
             //       jsonBody.put("UserId",Integer.valueOf(userid ));
             jsonBody.put("TaskId",Integer.valueOf(taskid));
-
-
-
-
-
 
             //JSONArray songsArray = jsonBody.toJSONArray(jsonBody.names());
             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {
@@ -382,8 +383,12 @@ public class TaskDetails extends Fragment {
 
                     //TODO: handle success
 
-                    getFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,posternames,price,location,userimage,date)).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,posternames,price,location,userimage,date,useridd)).commit();
 
+                    SendNotification sendNotification =new SendNotification(getContext(),
+                            useridd,"New Offer","You have a new Offer");
+
+                    sendNotification.send();
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -444,9 +449,20 @@ public class TaskDetails extends Fragment {
 
                     //TODO: handle success
 
-                    getFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,posternames,price,location,userimage,date)).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.detailfragid,new TaskDetails(detail,taskstatus,duedates,taskid,posternames,price,location,userimage,date,useridd)).commit();
 //                    onDetach();
 //                    onAttach(getContext());
+
+                    try {
+                        String name= new JWTget(getContext()).jwtverifier(token,"unique_name");
+
+                        SendNotification sendNotification =new SendNotification(getContext(),
+                                useridd,"New Comment",name +"commented on your task.");
+                        sendNotification.send();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 }
             }, new Response.ErrorListener() {
@@ -495,14 +511,8 @@ public class TaskDetails extends Fragment {
         URL1=Constants.BaseUrl+"basictask/gettaskoffers";
         // URL="https://httpbin.org/post";
 
-
         JSONObject jsonBody = new JSONObject();
-
         jsonBody.put("TaskId",Integer.valueOf(taskid));
-
-
-
-
 
         //JSONArray songsArray = jsonBody.toJSONArray(jsonBody.names());
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, URL1, jsonBody, new Response.Listener<JSONObject>() {
