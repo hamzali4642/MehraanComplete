@@ -352,7 +352,7 @@ public class ChatLayout extends Fragment {
 
                                     if(check1){
                                     FirebaseNotificationHelper.initialize
-                                            ("AAAAeT9NimI:APA91bG1afyJB_0GgG97-527fqluDcPGo3_yBpr7jv22edHjVhLLlv82wmAYFnNZOHaTLPy5Qlw22Ot6N7fuzbP--XKQI-zU_bfjYTjHSspudB7NyyRbu9ut6P-7h21tXh23vO4osHP7")
+                                            ("AAAApQwQsk4:APA91bFThYxZwYxY-2tthXBCssc9RJwfrPVi8_RGvRnm7XKRtfiKBzGx1ZC44VmTbPSxDdTiGzjjm96Cf76PPwJgpcnc51PkBrmUkPTG6leiRUD8JfybHAm8i5UtKbQRl1AoBX8VaDTn")
                                             .defaultJson(true, null)
                                             .title(sendername)
                                             .message(messageText)

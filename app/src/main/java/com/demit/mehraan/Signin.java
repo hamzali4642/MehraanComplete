@@ -170,12 +170,7 @@ public class Signin extends Fragment {
         }
     }
     public void getToken(String token){
-        SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString("token" ,  token);
-        editor.putString("number",phonenum);
-        editor.apply();
 
         try {
             jwtverifier(token);
@@ -221,10 +216,23 @@ public class Signin extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
-                                Intent intent= new Intent(getContext(),Dashboard.class);
-                                startActivity(intent);
-                                getActivity().finish();
+                                reference.child("Users").child(id).child("block").setValue("0").addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                                            editor.putString("token" ,  token);
+                                            editor.putString("number",phonenum);
+                                            editor.apply();
 
+                                            Intent intent= new Intent(getContext(),Dashboard.class);
+                                            startActivity(intent);
+                                            getActivity().finish();
+
+                                        }
+                                    }
+                                });
                             }
                         });
                     }

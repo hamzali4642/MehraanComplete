@@ -100,14 +100,26 @@ public class Messages extends Fragment {
                             if(dataSnapshot.hasChild("lastmsg"))
                             {
 
-                            modelInbox.setLastmessagetime
-                                    (dataSnapshot.child("lastmsg").child(userid).child("lastmessagetime").getValue().toString());
+                                try {
+                                    modelInbox.setLastmessagetime
+                                            (dataSnapshot.child("lastmsg").child(userid).child("lastmessagetime").getValue().toString());
 
-                            modelInbox.setLastmsgtime
-                                    (dataSnapshot.child("lastmsg").child(userid).child("last").getValue().toString());
-                            modelInbox.setLastmsg
-                                    (dataSnapshot.child("lastmsg").child(userid).child("lastmessage").getValue().toString());
+                                    modelInbox.setLastmsgtime
+                                            (dataSnapshot.child("lastmsg").child(userid).child("last").getValue().toString());
+                                    modelInbox.setLastmsg
+                                            (dataSnapshot.child("lastmsg").child(userid).child("lastmessage").getValue().toString());
 
+
+                                }catch (Exception e){
+                                    modelInbox.setLastmessagetime
+                                            ("");
+
+                                    modelInbox.setLastmsgtime
+                                            ("");
+                                    modelInbox.setLastmsg
+                                            ("");
+
+                                }
 
 
 
@@ -134,6 +146,7 @@ public class Messages extends Fragment {
                                         }
                                     }else {
                                         MessageAdapter adapter=new MessageAdapter(mlist);
+                                        chatlist.setAdapter(adapter);
                                         adapter.notifyDataSetChanged();
                                     }
                                 }catch (Exception e){
