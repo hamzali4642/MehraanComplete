@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.demit.mehraan2"
+        applicationId "com.demit.mehraanexperts"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

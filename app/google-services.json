@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "708872024654",
+    "firebase_url": "https://mehraan-experts.firebaseio.com",
+    "project_id": "mehraan-experts",
+    "storage_bucket": "mehraan-experts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708872024654:android:384a3e383146a230bf091f",
+        "android_client_info": {
+          "package_name": "com.demit.mehraanexperts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708872024654-8j5tqpli4fteln799o3ieg4lm5njjab6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQQBtYn7z3-IXl9FvBESe0fHVeYwvd_O0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708872024654-8j5tqpli4fteln799o3ieg4lm5njjab6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
