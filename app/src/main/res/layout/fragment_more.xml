@@ -139,29 +139,48 @@
         android:textSize="15sp"
         android:textStyle="bold"
         android:textColor="@color/colorAccent"
-
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
+
+    <TextView
+        android:id="@+id/registration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="25dp"
+        android:drawableLeft="@drawable/ic_library_books_black_24dp"
+        android:drawablePadding="15dp"
+        android:drawableTint="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:text="Registration"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
+
     <TextView
         android:id="@+id/logoutid"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
         android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
         android:drawablePadding="15dp"
         android:drawableTint="@color/colorPrimary"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|right"
         android:text="Logout"
+        android:textColor="@color/colorAccent"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/guideline56"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
@@ -198,6 +217,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view9"
         android:layout_width="0dp"
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
@@ -208,6 +228,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view8"
         android:layout_width="0dp"
         android:layout_height="0.1dp"
         android:layout_marginHorizontal="15dp"
