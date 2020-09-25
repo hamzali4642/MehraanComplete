@@ -144,8 +144,10 @@ public class More extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
+                                        alertDialog.dismiss();
                                         Toast.makeText(getContext(), "Request Submitted", Toast.LENGTH_SHORT).show();
                                     }else{
+                                        alertDialog.dismiss();
                                         Toast.makeText(getContext(),"Failed to submit request",Toast.LENGTH_SHORT).show();
                                     }
                                 }
