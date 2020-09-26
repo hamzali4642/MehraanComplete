@@ -84,7 +84,6 @@ public class More extends Fragment {
                         String currentdate, adddate;
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         Date datee = new Date();
-                        Log.d("Date", formatter.format(datee));
 
                         currentdate = formatter.format(datee);
                         adddate = snapshot.getValue().toString();
@@ -96,11 +95,14 @@ public class More extends Fragment {
                             adate = simpleDateFormat.parse(adddate);
                             long cudate = cdate.getTime();
                             long addate = adate.getTime();
-                            period = new org.joda.time.Period(addate, cudate, PeriodType.months());
-                            Log.d("date", period.getMonths() + "");
+                            period = new org.joda.time.Period( cudate,addate, PeriodType.days());
 
-                            Toast.makeText(getContext(), period.getMonths()+"", Toast.LENGTH_SHORT).show();
-                            if(period.getMonths() >=1){
+                            String days=period.getDays()+"";
+                            Log.d("date", days);
+
+                            Log.d("date" , currentdate +"   "+adddate);
+
+                            if(period.getDays() <=0){
                                 registration.setVisibility(View.VISIBLE);
                             }else {
                                 registration.setVisibility(View.GONE);

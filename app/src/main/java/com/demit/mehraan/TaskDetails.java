@@ -219,11 +219,11 @@ public class TaskDetails extends Fragment {
                                     adate = simpleDateFormat.parse(adddate);
                                     long cudate = cdate.getTime();
                                     long addate = adate.getTime();
-                                    Period period = new org.joda.time.Period(addate, cudate, PeriodType.months());
+                                    Period period = new org.joda.time.Period( cudate, addate,PeriodType.days());
                                     Log.d("date", period.getMonths() + "");
 
                                     Toast.makeText(getContext(), period.getMonths()+"", Toast.LENGTH_SHORT).show();
-                                    if(period.getMonths() >=1){
+                                    if(period.getDays() <=0){
                                         Toast.makeText(getContext(), "You are not registered.\n Register your self to continue", Toast.LENGTH_SHORT).show();
                                     }else {
 

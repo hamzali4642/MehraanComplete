@@ -1,8 +1,11 @@
 package com.demit.mehraan;
 
+import android.app.ActivityManager;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,8 +25,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.demit.mehraan.ContextClass.JWTget;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -34,11 +44,18 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
+import static android.content.Context.ACTIVITY_SERVICE;
+
 
 public class EarnMoney extends Fragment {
 
     RecyclerView earnmoneylist;
     ImageView tasksettings;
+    SweetAlertDialog alertDialog;
+
+    Boolean check =false;
 //taskId,taskName,price,location,dateTime,taskStatus
     ArrayList<String> userid = new ArrayList<>();
     ArrayList<String> taskID=new ArrayList<>();
@@ -93,6 +110,54 @@ public class EarnMoney extends Fragment {
            }
        });
 
+
+
+       //------------------
+
+        SharedPreferences sharedPreferencess = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String token = sharedPreferences.getString("token","");
+        try {
+            String id= new JWTget(getContext()).jwtverifier(token,"Id");
+
+            check = true;
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            reference.child("Users").child(id).child("block").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(check){
+                        if(snapshot.getValue().toString() .equals("1")){
+                            alertDialog = new SweetAlertDialog(getContext(),SweetAlertDialog.ERROR_TYPE);
+
+                            alertDialog.setTitleText("You are blocked can't use the app.");
+                            alertDialog.setCancelable(false);
+                            alertDialog.setConfirmButtonBackgroundColor(Color.RED);
+                            alertDialog.setConfirmButton("OK", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    ((ActivityManager)getContext().getSystemService(ACTIVITY_SERVICE))
+                                            .clearApplicationUserData();
+                                }
+                            });
+                            alertDialog.show();
+
+                            check = false;
+                        }else{
+                            check = false;
+                        }
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //----------
 
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
