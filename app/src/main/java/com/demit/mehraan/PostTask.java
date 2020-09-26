@@ -63,7 +63,7 @@ public class PostTask extends Fragment {
     String token;
     TextView duedate;
     DatePickerDialog.OnDateSetListener duedateSetListener;
-    private static final String GOOGLE_MAPS_API_KEY = "AIzaSyAcxInhB-GFouGG3fTgyc60KWabj_n3kPs";
+    private static final String GOOGLE_MAPS_API_KEY = "AIzaSyAQQBtYn7z3-IXl9FvBESe0fHVeYwvd_O0";
     SharedPreferences mSharedPreference;
     String dates="";
     String latlng,getLatlng;
