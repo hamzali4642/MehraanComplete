@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -42,6 +43,7 @@ public class SplashScreen extends AppCompatActivity {
 
                 SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(SplashScreen.this);
                 String token=sharedPreferences.getString("token","");
+                Log.d("token",token);
                 if(token.equals("")){
                     Intent intent=new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);

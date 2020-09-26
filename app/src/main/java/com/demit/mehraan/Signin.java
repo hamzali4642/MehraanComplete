@@ -153,7 +153,6 @@ public class Signin extends Fragment {
                     login.setEnabled(true);
                     Log.d("ErrorException2",error.toString());
                     error.printStackTrace();
-                    //TODO: handle failure
                 }
             });
 
