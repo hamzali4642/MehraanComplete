@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/background"
     tools:context=".EarnMoney">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -26,7 +26,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tasklistid"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/task_list_view"
+                />
 
         </RelativeLayout>
 
