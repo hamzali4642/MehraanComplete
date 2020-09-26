@@ -254,8 +254,9 @@ public class PinCode extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
 
+                        Toast.makeText(getContext(),"Somethinig went wrong",Toast.LENGTH_SHORT);
+                        getActivity().onBackPressed();
                         // Hiding the progress dialog after all task complete.
-                        Toast.makeText(getContext(),"Connection Error",Toast.LENGTH_SHORT);
                         progressDialog.dismiss();
                         progressDialog.dismiss();
                         starttimer();

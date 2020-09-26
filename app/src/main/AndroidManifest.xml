@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/appicon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BridgeActivity"></activity>
+        <activity android:name=".Registration"></activity>
+        <activity android:name=".BridgeActivity" />
         <activity
             android:name=".UsesMapsRedirect"
             android:hardwareAccelerated="true">

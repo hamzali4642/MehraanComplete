@@ -36,7 +36,7 @@ public class Details extends AppCompatActivity {
 
         else if(next==2){
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.detailfragid,new PostedTaskDetails(detail,taskstatus,duedates,taskid,postername,price,location,userimage,taskdate)).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.detailfragid,new PostedTaskDetails(taskname,detail,taskstatus,duedates,taskid,postername,price,location,userimage,taskdate)).commit();
 
         }
 

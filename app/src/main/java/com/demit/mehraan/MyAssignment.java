@@ -112,9 +112,7 @@ public class MyAssignment extends Fragment implements OnMapReadyCallback {
             }
         });
 
-        if(direction.equalsIgnoreCase("Online Task") || direction == null || direction.equals("null")){
-            assignmentleave.setVisibility(View.GONE);
-        }
+
         asschangestatust.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,15 +127,21 @@ public class MyAssignment extends Fragment implements OnMapReadyCallback {
         });
 
 
-        if(taskstatus.equals("Assigned")){
+        Log.d("statusss",taskstatus+" "+direction);
+//        if(taskstatus.equals("Assigned")){
 
             assignmentleave.setVisibility(View.VISIBLE);
             view.findViewById(R.id.assmapfrag).setVisibility(View.VISIBLE);
-        }else{
 
-            view.findViewById(R.id.assmapfrag).setVisibility(View.GONE);
-            assignmentleave.setVisibility(View.GONE);
-        }
+            if(direction.equalsIgnoreCase("Online Task") || direction == null || direction.equals("null")){
+                view.findViewById(R.id.assmapfrag).setVisibility(View.GONE);
+                assignmentleave.setVisibility(View.GONE);
+            }
+//        }else{
+//
+//
+//            assignmentleave.setVisibility(View.GONE);
+//        }
 
         return view;
     }

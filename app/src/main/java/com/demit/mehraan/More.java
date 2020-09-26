@@ -104,8 +104,10 @@ public class More extends Fragment {
 
                             if(period.getDays() <=0){
                                 registration.setVisibility(View.VISIBLE);
+                                registration.setEnabled(true);
                             }else {
-                                registration.setVisibility(View.GONE);
+                                registration.setText("Your account will be suspend on "+adddate);
+                                registration.setEnabled(false);
                             }
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -128,47 +130,48 @@ public class More extends Fragment {
         registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SweetAlertDialog alertDialog = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
-                alertDialog.setTitleText("Do you want to Register?");
-                alertDialog.setConfirmButton("Yes", new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-
-                        Integer id;
-                        String name;
-                        String token = sharedpreferences.getString("token","");
-                        JWTget jwTget=new JWTget(getContext());
-                        try {
-                            id=Integer.parseInt( jwTget.jwtverifier(token,"Id"));
-                             name =jwTget.jwtverifier(token,"unique_name");
-                            RequestModel model =new RequestModel(name,id);
-                            reference.child("Requests").child(id.toString()).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-                                        alertDialog.dismiss();
-                                        Toast.makeText(getContext(), "Request Submitted", Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        alertDialog.dismiss();
-                                        Toast.makeText(getContext(),"Failed to submit request",Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                                            }
-                });
-                alertDialog.setCancelButton("No", new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.dismiss();
-                    }
-                });
-                alertDialog.show();
+//                SweetAlertDialog alertDialog = new SweetAlertDialog(getContext(),SweetAlertDialog.WARNING_TYPE);
+//                alertDialog.setTitleText("Do you want to Register?");
+//                alertDialog.setConfirmButton("Yes", new SweetAlertDialog.OnSweetClickListener() {
+//                    @Override
+//                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+//
+//                        Integer id;
+//                        String name;
+//                        String token = sharedpreferences.getString("token","");
+//                        JWTget jwTget=new JWTget(getContext());
+//                        try {
+//                            id=Integer.parseInt( jwTget.jwtverifier(token,"Id"));
+//                             name =jwTget.jwtverifier(token,"unique_name");
+//                            RequestModel model =new RequestModel(name,id);
+//                            reference.child("Requests").child(id.toString()).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    if(task.isSuccessful()){
+//                                        alertDialog.dismiss();
+//                                        Toast.makeText(getContext(), "Request Submitted", Toast.LENGTH_SHORT).show();
+//                                    }else{
+//                                        alertDialog.dismiss();
+//                                        Toast.makeText(getContext(),"Failed to submit request",Toast.LENGTH_SHORT).show();
+//                                    }
+//                                }
+//                            });
+//
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                                            }
+//                });
+//                alertDialog.setCancelButton("No", new SweetAlertDialog.OnSweetClickListener() {
+//                    @Override
+//                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+//                        sweetAlertDialog.dismiss();
+//                    }
+//                });
+//                alertDialog.show();
+                startActivity(new Intent(getActivity(),Registration.class));
             }
         });
 

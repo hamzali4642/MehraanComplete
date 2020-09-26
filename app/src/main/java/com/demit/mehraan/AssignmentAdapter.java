@@ -70,6 +70,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
         String dptxt=dp[position];
         Glide.with(context).load(Constants.ImageUrl+dptxt).into(holder.dp);
 
+        Log.d("statusss",tasksttus[position]);
         holder.assignment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

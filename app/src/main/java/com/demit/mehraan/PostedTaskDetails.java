@@ -35,6 +35,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.demit.mehraan.ContextClass.JWTget;
+import com.demit.mehraan.ContextClass.SendNotification;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -76,9 +78,11 @@ public class PostedTaskDetails extends Fragment {
     String token="";
     String offerdetail="";
 
+    String taskname;
 
-    public PostedTaskDetails(String detail, String taskstatus, String duedates, String taskid, String postername,String price,String location,String userimage,String date ) {
+    public PostedTaskDetails(String taskname,String detail, String taskstatus, String duedates, String taskid, String postername,String price,String location,String userimage,String date ) {
         this.detail=detail;
+        this.taskname = taskname;
         this.taskstatus=taskstatus;
         this.duedates=duedates;
         this.taskid=taskid;
@@ -150,6 +154,8 @@ public class PostedTaskDetails extends Fragment {
             myreviewed.setEnabled(true);
             myofferlist.setVisibility(View.GONE);
         }
+
+        mytaskname.setText(taskname);
         String date = duedates;
         String[] parts = date.split("T");
         System.out.println("Date: " + parts[0]);
@@ -162,6 +168,13 @@ public class PostedTaskDetails extends Fragment {
         mypostime.setText(this.date);
 
 
+        mysendbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mywritecomment.getText().toString().trim().length()>0)
+                comment(mywritecomment.getText().toString());
+            }
+        });
 
         changestatust.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,7 +221,9 @@ public class PostedTaskDetails extends Fragment {
                 startActivity(intent);
             }
         });
-
+        if(mytasklocation.getText().toString().equals("Online Task")){
+            direction.setVisibility(View.GONE);
+        }
         return view;
     }
     public void  getcomments() throws JSONException {
@@ -639,5 +654,70 @@ public class PostedTaskDetails extends Fragment {
             }
         });
 
+    }
+
+
+    public void comment(String commentdetail){
+
+        try {
+
+            String URL = "https://mehraan-oh3.conveyor.cloud/api/basictask/postcomment";
+            URL=Constants.BaseUrl+"basictask/postcomment";
+            //URL="https://httpbin.org/post";
+
+
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("CommentDetail",commentdetail);
+            //       jsonBody.put("UserId",Integer.valueOf(userid ));
+            jsonBody.put("TaskId",Integer.valueOf(taskid));
+
+
+
+
+
+            //JSONArray songsArray = jsonBody.toJSONArray(jsonBody.names());
+            JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, URL, jsonBody, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    // Log.d("yewalaresponse123",response.toString());
+
+                    //TODO: handle success
+
+                    getFragmentManager().beginTransaction().replace(R.id.detailfragid,new PostedTaskDetails(taskname,detail,taskstatus,duedates,taskid,posternames,price,location,userimage,date)).commit();
+//                    onDetach();
+//                    onAttach(getContext());
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                    Log.d("yewalaresponse",error.toString());
+                    //TODO: handle failure
+                }
+            })
+            {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<String, String>();
+                    //  params.put("User-Agent", "Nintendo Gameboy");
+                    //   params.put("Accept-Language", "fr");
+                    params.put("Authorization", "Bearer "+token);
+                    return params;
+                }
+            };
+
+
+            jsonRequest.setRetryPolicy(
+                    new DefaultRetryPolicy(
+                            500000,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                    ));
+            Volley.newRequestQueue(getContext()).add(jsonRequest);
+
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

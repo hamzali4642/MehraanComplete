@@ -78,45 +78,34 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyHolder> {
         String fromuserid = messages.getFrom();
         String frommessagetype = messages.getType();
 
-        userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(fromuserid);
-
-        userRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild("profile_image")){
-                    String recimage = dataSnapshot.child("profile_image").getValue().toString();
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-//        holder.recieveimage.setVisibility(View.GONE);
-//        holder.senderimage.setVisibility(View.GONE);
+//        userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(fromuserid);
 //
+//        userRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if (dataSnapshot.hasChild("profile_image")){
+//                    String recimage = dataSnapshot.child("profile_image").getValue().toString();
+//                }
 //
-//        holder.senderimagell.setVisibility(View.GONE);
-//        holder.recieverimagell.setVisibility(View.GONE);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
 
 
         if (frommessagetype.equals("text")){
-//            holder.recieverMessageText.setVisibility(View.INVISIBLE);
 
             holder.sendertextll.setVisibility(View.GONE);
             holder.recievertextll.setVisibility(View.GONE);
             if (fromuserid.equals(messageSenderId)){
-//                holder.senderMessageText.setBackgroundResource(R.drawable.sender_messages_layout);
                 holder.sendertextll.setVisibility(View.VISIBLE);
                 holder.senderMessageText.setText(messages.getMessage());
 
-                if(list.size()-1==position){
-//                    Toast.makeText(context, messages.status , Toast.LENGTH_SHORT).show();
-                }
+
                 if(messages.status.equals("true")){
                     holder.textstatus.setImageResource(R.drawable.doubletick);
                 }else{
@@ -149,83 +138,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyHolder> {
                 holder.messagesenderdate.setText(messages.date + " "+ messages.time);
             }
             else {
-//                holder.senderMessageText.setVisibility(View.INVISIBLE);
                 holder.recievertextll.setVisibility(View.VISIBLE);
-
-//                holder.recieverMessageText.setBackgroundResource(R.drawable.reciever_messages_layout);
                 holder.recieverMessageText.setText(messages.getMessage());
 
                 holder.messagerecieverdate.setText(messages.date + " "+ messages.time);
             }
         }
-//        else if (frommessagetype.equals("image"))
-//        {
-//
-//            holder.recieverMessageText.setVisibility(View.INVISIBLE);
-//            holder.recievertextll.setVisibility(View.INVISIBLE);
-//            holder.senderMessageText.setVisibility(View.INVISIBLE);
-//            holder.sendertextll.setVisibility(View.INVISIBLE);
-//
-//
-//            if (fromuserid.equals(messageSenderId))
-//            {
-//                holder.senderimage.setVisibility(View.VISIBLE);
-//                holder.senderimagell.setVisibility(View.VISIBLE);
-//                holder.recieverimagell.setVisibility(View.GONE);
-//                Picasso.get().load(messages.getMessage()).into(holder.senderimage);
-//                holder.senderMessageText.setVisibility(View.GONE);
-//                holder.recieverMessageText.setVisibility(View.GONE);
-//
-//
-//                holder.imagesenderdate.setText(messages.date + " "+ messages.time);
-//                if(messages.status.equals("true")){
-//                    holder.imagestatus.setImageResource(R.drawable.doubletick);
-//                }else{
-//
-//                    DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
-//                    reference.child("Messages").child(messageSenderId).child(recieverid)
-//                            .child(messages.messageId).addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                            if(dataSnapshot.child("status").getValue().toString().equals("true")){
-//                                holder.imagestatus.setImageResource(R.drawable.doubletick);
-//                            }else{
-//                                holder.imagestatus.setImageResource(R.drawable.tick);
-//                            }
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                        }
-//                    });
-//
-//
-//
-//                }
-//            }
-//            else
-//            {
-//
-//                holder.senderimagell.setVisibility(View.GONE);
-//                holder.recieverimagell.setVisibility(View.VISIBLE);
-//                holder.recieveimage.setVisibility(View.VISIBLE);
-//                Picasso.get().load(messages.getMessage()).into(holder.recieveimage);
-//                holder.recieverMessageText.setVisibility(View.GONE);
-//                holder.imagerecieverdate.setText(messages.date + " "+ messages.time);
-//                holder.senderMessageText.setVisibility(View.GONE);
-//            }
-//
-//
-//        }
-
-
-
-
-
-
     }
 
     @Override
@@ -247,13 +165,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyHolder> {
             //-----------------------------------------------
             messagerecieverdate=itemView.findViewById(R.id.reciever_message_textdate);
             messagesenderdate=itemView.findViewById(R.id.sender_message_textdate);
-//            imagesenderdate=itemView.findViewById(R.id.sender_image_textdate);
-//            imagerecieverdate=itemView.findViewById(R.id.reciever_image_textdate);
-
-
-
-//            senderimagell=itemView.findViewById(R.id.messagesenderimagell);
-//            recieverimagell=itemView.findViewById(R.id.messagerecieverimagell);
             recievertextll=itemView.findViewById(R.id.reciever_message_textll);
             sendertextll=itemView.findViewById(R.id.sender_message_textll);
 
@@ -261,10 +172,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyHolder> {
             imagestatus=itemView.findViewById(R.id.imagereadstatus);
             textstatus=itemView.findViewById(R.id.msgreadstatus);
 
-            //-------------------------------------------------
-//            senderimage=itemView.findViewById(R.id.messagesenderimage);
-//            recieveimage=itemView.findViewById(R.id.messagerecieverimage);
-
+            //------------------------------------------------
         }
     }
 

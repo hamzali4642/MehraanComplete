@@ -115,7 +115,7 @@ public class Messages extends Fragment {
                                             ("");
 
                                     modelInbox.setLastmsgtime
-                                            ("");
+                                            ("0");
                                     modelInbox.setLastmsg
                                             ("");
 

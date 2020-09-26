@@ -99,6 +99,7 @@ int a,layoutcheck;
 
 
 
+            Log.d("status",tasksttus[position]);
         holder.open.setOnClickListener(new View.OnClickListener() {
             private Context context;
             @Override
@@ -106,6 +107,7 @@ int a,layoutcheck;
                 context=v.getContext();
                Intent intent=new Intent(context,Details.class);
                     intent.putExtra("taskid",taskIds[position]);
+                    Log.d("status",tasksttus[position]);
                     intent.putExtra("taskstatus",tasksttus[position]);
                 SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
                 String[] da=duedates[position].split("T");

@@ -279,6 +279,7 @@ public class Profile extends Fragment implements BSImagePicker.OnMultiImageSelec
     public void onMultiImageSelected(List<Uri> uriList, String tag) {
         this.uriList=uriList;
         try {
+            dp.setImageURI(uriList.get(0));
             requestUploadSurvey();
         } catch (JSONException e) {
             e.printStackTrace();
