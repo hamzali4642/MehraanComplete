@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C1C1C"
+    android:background="@drawable/background"
     tools:context=".SplashScreen">
 
 
@@ -20,20 +20,32 @@
         app:layout_constraintStart_toStartOf="@+id/guideline53"
         app:layout_constraintTop_toTopOf="@+id/guideline51" />
 
+    <TextView
+        android:id="@+id/txxxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mehran Experts"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textColor="#cfcece"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/logoid" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.55" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline53"

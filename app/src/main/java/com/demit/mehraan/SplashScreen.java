@@ -10,10 +10,12 @@ import android.preference.PreferenceManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
     Animation right, left,fade,fade2;
     ImageView logo;
+    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,9 @@ public class SplashScreen extends AppCompatActivity {
         right= AnimationUtils.loadAnimation(this,R.anim.right_to_left);
         left= AnimationUtils.loadAnimation(this,R.anim.left_to_right);
         logo=findViewById(R.id.logoid);
+        txt=findViewById(R.id.txxxt);
         logo.setAnimation(fade);
+        txt.setAnimation(fade);
 //        logo.setAnimation(AnimationUtils.loadAnimation(this,R.anim.rotation));
 
 
